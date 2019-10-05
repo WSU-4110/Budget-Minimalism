@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Learning1</string>
+    <string name="action_settings">Settings</string>
+    <string name="button_label">Income Category 1</string>
+    <string name="button_label2">Set Income Categories</string>
+    <string name="income_label">Category 1</string>
+    <string name="income_label2">Amount</string>
+</resources>
