@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Learning1</string>
+    <string name="action_settings">Settings</string>
+    <string name="button_label">Income Category 1</string>
+    <string name="button_label2">Set Income Categories</string>
+    <string name="income_label">Category 1</string>
+    <string name="income_label2">Amount</string>
+    <string name="income_label3">$~~~~</string>
+    <string name="income_label4">Paycheck</string>
+    <string name="income_label5">Dividends</string>
+    <string name="income_label6">Gift</string>
+    <string name="income_label7">Other</string>
+    <string name="income_category2">Category 2</string>
+    <string name="income_category_3">Category 3</string>
+    <string name="income_category4">Category 4</string>
+    <string name="income_category5">Category 5</string>
+    <string name="welcomeText1">Welcome!</string>
+</resources>
