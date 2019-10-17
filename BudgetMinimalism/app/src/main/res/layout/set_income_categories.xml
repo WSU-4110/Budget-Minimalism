@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#6cff66"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#6cff66"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_main"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/editText18"
+        android:layout_width="171dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="448dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:ems="10"
+        android:hint="@string/income_label3"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:text="@string/income_label2"
+        android:textColor="#676767"
+        android:textSize="18sp"
+        android:typeface="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText19"
+        android:layout_width="171dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="448dp"
+        android:ems="10"
+        android:hint="@string/income_label4"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:text="@string/income_category5"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#676767"
+        android:textSize="18sp"
+        android:typeface="normal"
+        app:layout_constraintEnd_toStartOf="@+id/editText2"
+        app:layout_constraintHorizontal_bias="0.837"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText16"
+        android:layout_width="171dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="392dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:ems="10"
+        android:hint="@string/income_label3"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:text="@string/income_label2"
+        android:textColor="#676767"
+        android:textSize="18sp"
+        android:typeface="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText17"
+        android:layout_width="171dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="392dp"
+        android:ems="10"
+        android:hint="@string/income_label4"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:text="@string/income_category4"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#676767"
+        android:textSize="18sp"
+        android:typeface="normal"
+        app:layout_constraintEnd_toStartOf="@+id/editText2"
+        app:layout_constraintHorizontal_bias="0.837"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText9"
+        android:layout_width="171dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="336dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:ems="10"
+        android:hint="@string/income_label3"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:text="@string/income_label2"
+        android:textColor="#676767"
+        android:textSize="18sp"
+        android:typeface="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText10"
+        android:layout_width="171dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="336dp"
+        android:ems="10"
+        android:hint="@string/income_label4"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:text="@string/income_category_3"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#676767"
+        android:textSize="18sp"
+        android:typeface="normal"
+        app:layout_constraintEnd_toStartOf="@+id/editText2"
+        app:layout_constraintHorizontal_bias="0.822"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText7"
+        android:layout_width="171dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="276dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:ems="10"
+        android:hint="@string/income_label3"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:text="@string/income_label2"
+        android:textColor="#676767"
+        android:textSize="18sp"
+        android:typeface="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText8"
+        android:layout_width="171dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="276dp"
+        android:ems="10"
+        android:hint="@string/income_label4"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:text="@string/income_category2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#676767"
+        android:textSize="18sp"
+        android:typeface="normal"
+        app:layout_constraintEnd_toStartOf="@+id/editText2"
+        app:layout_constraintHorizontal_bias="0.822"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:tint="#676767"
+        app:backgroundTint="#6cff66"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="321dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="88dp"
+        android:text="@string/button_label2"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="171dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:ems="10"
+        android:hint="@string/income_label3"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:text="@string/income_label2"
+        android:textColor="#676767"
+        android:textSize="18sp"
+        android:typeface="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="171dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="220dp"
+        android:ems="10"
+        android:hint="@string/income_label4"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:text="@string/income_label"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#676767"
+        android:textSize="18sp"
+        android:typeface="normal"
+        app:layout_constraintEnd_toStartOf="@+id/editText2"
+        app:layout_constraintHorizontal_bias="0.837"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
