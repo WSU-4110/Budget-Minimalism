@@ -17,6 +17,10 @@ public class expense_inputscreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expense_inputscreen);
 
+        // Mitchell:
+        // This code connects the xml back button and the java object
+        // then it creates a click listener, so that when we click on it
+        // the button calls the returnToMainMenuPlease()
         back = (FloatingActionButton) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
