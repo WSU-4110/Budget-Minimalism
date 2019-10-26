@@ -30,7 +30,7 @@
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
         android:background="#6cff66"
-        android:text="@string/button_label"
+        android:text="@string/Income"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

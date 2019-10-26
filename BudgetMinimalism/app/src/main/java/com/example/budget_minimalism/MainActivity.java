@@ -15,17 +15,24 @@ import android.view.MenuItem;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+
+    // Object name declarations
     private Button button2;         //Main menu "Expense" button object
     private Button incomeButton;    //Main menu "Income" button object
 
     @Override
+    // This code was created by default in android studio
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // Mitchell Wrote this function
+        // Mitchell:
+        // This code connects the xml "Expense" button and the java object "button2"
+        // We really need to change the strings.xml file so its not so confusing but...
+        // then it creates a click listener, so that when we click on it
+        // the button calls the openActivity_expense_inputscreen()
         button2 = (Button) findViewById(R.id.button2); // Main menu sends to expense page
         button2.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -33,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
                     openActivity_expense_inputscreen();
                 }
             });
+
+        // Mitchell:
+        // This code connects the xml "Income" button and the java object "incomeButton"
+        // then it creates a click listener, so that when we click on it
+        // the button calls the openActivity_expense_inputscreen()
         incomeButton = (Button) findViewById(R.id.incomeButton);
         incomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,10 +70,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    // Mitchell
     public void openActivity_income_inputscreen() {
         Intent intent = new Intent(this, income_inputscreen.class);
         startActivity(intent);
     }
+
+    // Android Studio default code
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -69,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    // Android Studio default code
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
