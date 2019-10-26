@@ -15,7 +15,8 @@ import android.view.MenuItem;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    private Button button2; //this is the main menu "Expense" button object
+    private Button button2;         //Main menu "Expense" button object
+    private Button incomeButton;    //Main menu "Income" button object
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,25 +33,35 @@ public class MainActivity extends AppCompatActivity {
                     openActivity_expense_inputscreen();
                 }
             });
-        }
+        incomeButton = (Button) findViewById(R.id.incomeButton);
+        incomeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity_income_inputscreen();
+            }
+        });
 
-/**
+        // This function sends you to the settings page
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener2(new View.OnClickListener() {
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Settings page --- Activate!", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "WRITE CODE TO SEND U TO SETTINGS", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
     }
-**/
+
     // Mitchell wrote this function
     public void openActivity_expense_inputscreen() {
         Intent intent = new Intent(this, expense_inputscreen.class);
         startActivity(intent);
     }
 
+    public void openActivity_income_inputscreen() {
+        Intent intent = new Intent(this, income_inputscreen.class);
+        startActivity(intent);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

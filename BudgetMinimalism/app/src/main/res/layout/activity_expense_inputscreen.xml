@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/expenseBack"
+        android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -111,7 +111,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/incomeButton"
         android:layout_width="129dp"
         android:layout_height="76dp"
         android:layout_marginStart="140dp"
