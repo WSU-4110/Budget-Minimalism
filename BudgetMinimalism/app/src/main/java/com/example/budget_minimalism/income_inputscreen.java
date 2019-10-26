@@ -8,15 +8,14 @@ import android.view.View;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class expense_inputscreen extends AppCompatActivity {
+public class income_inputscreen extends AppCompatActivity {
 
-    private FloatingActionButton back;   //create object for back button
+    private FloatingActionButton back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_expense_inputscreen);
-
+        setContentView(R.layout.activity_income_inputscreen);
         back = (FloatingActionButton) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,11 +23,8 @@ public class expense_inputscreen extends AppCompatActivity {
                 returnToMainMenuPlease();
             }
         });
-
-
     }
 
-    // Function which returns user to main menu from the expense input screen
     public void returnToMainMenuPlease() {
         Intent intent = new Intent (this, MainActivity.class);
         startActivity(intent);
