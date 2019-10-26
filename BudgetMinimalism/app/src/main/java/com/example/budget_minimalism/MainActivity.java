@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     // Object name declarations
     private Button button2;         //Main menu "Expense" button object
     private Button incomeButton;    //Main menu "Income" button object
+    private Button viewButton;
 
     @Override
     // This code was created by default in android studio
@@ -57,9 +58,18 @@ public class MainActivity extends AppCompatActivity {
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "WRITE CODE TO SEND U TO SETTINGS", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+                //Snackbar.make(view, "WRITE CODE TO SEND U TO SETTINGS", Snackbar.LENGTH_LONG)
+                //       .setAction("Action", null).show();
+                sendYoutoSettingsPage();
+            }
+        });
+
+        viewButton = (Button) findViewById(R.id.button3);
+        viewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendYouToViewRecent();
             }
         });
     }
@@ -73,6 +83,18 @@ public class MainActivity extends AppCompatActivity {
     // Mitchell
     public void openActivity_income_inputscreen() {
         Intent intent = new Intent(this, income_inputscreen.class);
+        startActivity(intent);
+    }
+
+    // Mitchell
+    public void sendYoutoSettingsPage() {
+        Intent intent = new Intent (this, settingsPage.class);
+        startActivity(intent);
+    }
+
+    // This function sends you to the view_recent_budget_activity
+    public void sendYouToViewRecent() {
+        Intent intent = new Intent (this, view_recent_budget_activity.class);
         startActivity(intent);
     }
 

@@ -6,10 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".settingsPage">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="183dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="88dp"
+        android:text="@string/action_settings"
+        android:textSize="@android:dimen/app_icon_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
     <Button
         android:id="@+id/SetIncomeCategories"
-        android:layout_width="191dp"
-        android:layout_height="123dp"
+        android:layout_width="149dp"
+        android:layout_height="80dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
@@ -18,17 +33,18 @@
         android:layout_marginBottom="16dp"
         android:background="#6cff66"
         android:text="@string/SetIncomeCategories"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#6e6e6e"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.164" />
+        app:layout_constraintVertical_bias="0.331" />
 
     <Button
-        android:id="@+id/setIncomeCategories"
-        android:layout_width="191dp"
-        android:layout_height="123dp"
+        android:id="@+id/setExpenseCategories"
+        android:layout_width="144dp"
+        android:layout_height="81dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
@@ -37,17 +53,18 @@
         android:layout_marginBottom="16dp"
         android:background="#6cff66"
         android:text="@string/setexpensecats"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#6e6e6e"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.449" />
+        app:layout_constraintVertical_bias="0.605" />
 
     <Button
-        android:id="@+id/setIncomeCategories2"
-        android:layout_width="191dp"
-        android:layout_height="123dp"
+        android:id="@+id/DeveloperInfo"
+        android:layout_width="140dp"
+        android:layout_height="79dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
@@ -56,10 +73,11 @@
         android:layout_marginBottom="16dp"
         android:background="#6cff66"
         android:text="@string/developerInfo"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#6e6e6e"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.723" />
+        app:layout_constraintVertical_bias="0.878" />
 </androidx.constraintlayout.widget.ConstraintLayout>

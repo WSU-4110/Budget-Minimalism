@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view_spending_delta"></activity>
+        <activity android:name=".splashScreen"></activity>
+        <activity android:name=".developerInfoPage" />
+        <activity android:name=".view_spending_delta" />
         <activity android:name=".view_recent_budget_activity" />
         <activity android:name=".set_income_categories" />
         <activity android:name=".set_expense_categories" />
