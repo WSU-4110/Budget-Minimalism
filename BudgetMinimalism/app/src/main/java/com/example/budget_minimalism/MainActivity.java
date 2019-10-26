@@ -1,5 +1,6 @@
 package com.example.budget_minimalism;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -11,8 +12,10 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+    private Button button2; //this is the main menu "Expense" button object
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,14 +24,32 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // Mitchell Wrote this function
+        button2 = (Button) findViewById(R.id.button2); // Main menu sends to expense page
+        button2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    openActivity_expense_inputscreen();
+                }
+            });
+        }
+
+
+/**
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Return to main menu", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Settings page --- Activate!", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
+    }
+**/
+    // Mitchell wrote this function
+    public void openActivity_expense_inputscreen() {
+        Intent intent = new Intent(this, expense_inputscreen.class);
+        startActivity(intent);
     }
 
     @Override
