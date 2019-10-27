@@ -11,11 +11,10 @@
         android:id="@+id/ViewButton "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="64dp"
         android:background="#4CAF50"
         android:text="CHART"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,12 +23,12 @@
         style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
         android:layout_width="0dp"
         android:layout_height="165dp"
-        android:layout_marginBottom="350dp"
+        android:layout_marginBottom="236dp"
         android:max="1000"
         android:progress="400"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -66,7 +65,6 @@
         app:fontFamily="monospace"
         app:layout_constraintBottom_toTopOf="@+id/textView10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView

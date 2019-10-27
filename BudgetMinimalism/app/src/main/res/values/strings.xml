@@ -27,4 +27,5 @@
     <string name="InputExpense">Input Expense</string>
     <string name="setexpensecats">Set Expense Categories</string>
     <string name="developerInfo">Developer Info</string>
+    <string name="recentActivity">Recent Activity</string>
 </resources>

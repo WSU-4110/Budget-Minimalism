@@ -23,25 +23,23 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginBottom="290dp"
+        android:layout_marginTop="13dp"
         android:background="#6cff66"
         android:text="@string/button_label5"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#676767"
         android:textStyle="bold"
         android:typeface="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="213dp"
         android:layout_height="0dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="28dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/optional"
@@ -50,33 +48,28 @@
         android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="164dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginTop="31dp"
         android:background="#6cff66"
         android:text="@string/Description"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textStyle="bold"
         android:typeface="normal"
-        app:layout_constraintEnd_toStartOf="@+id/editText"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="219dp"
         android:layout_height="48dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="29dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="numberDecimal"
         android:text="@string/elipse"
@@ -84,48 +77,43 @@
         android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="2dp"
         android:background="#6cff66"
         android:text="@string/button_label6"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <Spinner
         android:id="@+id/spinner4"
         android:layout_width="213dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="308dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <Button
         android:id="@+id/incomeButton"
         android:layout_width="129dp"
         android:layout_height="76dp"
-        android:layout_marginStart="140dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginBottom="207dp"
+        android:layout_marginBottom="16dp"
         android:background="#6cff66"
         android:text="@string/Submit"
         android:textColor="#676767"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner4"
-        app:layout_constraintVertical_bias="0.035" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView12"
