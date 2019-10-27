@@ -4,20 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ABDFD3"
+    android:background="#FFFFFF"
     tools:context=".Main2Activity">
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="215dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="88dp"
+        android:text="@string/recentActivity"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editText12"
         android:layout_width="137dp"
         android:layout_height="46dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        tools:layout_editor_absoluteY="235dp" />
 
     <EditText
         android:id="@+id/editText2"
@@ -26,16 +38,15 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="ITEM1"
-        tools:layout_editor_absoluteX="18dp"
-        tools:layout_editor_absoluteY="208dp" />
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="230dp" />
 
     <EditText
         android:id="@+id/editText3"
         android:layout_width="198dp"
         android:layout_height="44dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="43dp"
-        android:layout_marginRight="43dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="ITEM5"
@@ -46,9 +57,7 @@
         android:id="@+id/editText4"
         android:layout_width="198dp"
         android:layout_height="44dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginRight="42dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="ITEM4"
@@ -60,8 +69,6 @@
         android:layout_width="198dp"
         android:layout_height="44dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginRight="42dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="ITEM2"
@@ -69,62 +76,32 @@
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:background="#3F51B5"
-        android:text="VIEW"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="0dp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="104dp"
-        android:layout_marginRight="104dp"
-        android:background="#4CAF50"
-        android:text="RECENT ACTIVITIES"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="142dp"
-        android:layout_marginRight="142dp"
-        android:layout_marginBottom="26dp"
-        android:background="#00FCD9D9"
-        android:text="DESCRIPTION"
+        android:layout_marginBottom="20dp"
+        android:background="#6cff66"
+        android:text="@string/Description"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toTopOf="@+id/editText2"
-        app:layout_constraintEnd_toStartOf="@+id/textView4" />
+        tools:layout_editor_absoluteX="48dp" />
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginRight="41dp"
-        android:text="AMOUNT"
+        android:id="@+id/textView15"
+        android:layout_width="103dp"
+        android:layout_height="27dp"
+        android:layout_marginBottom="24dp"
+        android:background="#6cff66"
+        android:text="@string/button_label6"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintBottom_toTopOf="@+id/editText2"
+        tools:layout_editor_absoluteX="241dp" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="198dp"
         android:layout_height="44dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginRight="42dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="ITEM3"
@@ -135,9 +112,6 @@
         android:id="@+id/editText13"
         android:layout_width="137dp"
         android:layout_height="46dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -147,9 +121,7 @@
         android:id="@+id/editText14"
         android:layout_width="137dp"
         android:layout_height="46dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -157,11 +129,9 @@
 
     <EditText
         android:id="@+id/editText15"
-        android:layout_width="137dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_width="133dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -169,11 +139,9 @@
 
     <EditText
         android:id="@+id/editText11"
-        android:layout_width="137dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_width="131dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="21dp"
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"

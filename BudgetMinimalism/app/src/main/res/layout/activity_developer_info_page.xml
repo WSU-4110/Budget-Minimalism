@@ -12,6 +12,6 @@
         android:layout_height="116dp"
         android:text="Somebody build this UI"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="126dp"
-        tools:layout_editor_absoluteY="227dp" />
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="214dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
