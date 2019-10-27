@@ -38,17 +38,16 @@
         <item>School</item>
         <item>Phone</item>
         <item>Car Insurance</item>
+        <item>Other</item>
     </string-array>
 
     <!-- Below is a string array which hardcodes the income categories -->
     <string-array name="incomeCategoriesArray">
-        <item>Groceries</item>
-        <item>Subscriptions</item>
-        <item>Rent</item>
-        <item>Dining out</item>
-        <item>School</item>
-        <item>Phone</item>
-        <item>Car Insurance</item>
+        <item>Paycheck</item>
+        <item>Gift</item>
+        <item>Dividends</item>
+        <item>Loans</item>
+        <item>Interest</item>
     </string-array>
 
 
