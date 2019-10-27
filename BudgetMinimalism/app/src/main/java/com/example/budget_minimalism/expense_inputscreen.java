@@ -36,8 +36,8 @@ public class expense_inputscreen extends AppCompatActivity implements AdapterVie
         });
 
         // Mitchell
-        // This code enables the categories spinner on this page
-        Spinner spinner = findViewById(R.id.spinner4);
+        // This code enables the categories spinner on the expense input page
+        Spinner spinner = findViewById(R.id.spinner4); // create new spinner object
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.expenseCategoriesArray, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
@@ -45,14 +45,15 @@ public class expense_inputscreen extends AppCompatActivity implements AdapterVie
 
 
     }
-
+    // Mitchell
     // Function which returns user to main menu from the expense input screen
     public void returnToMainMenuPlease() {
         Intent intent = new Intent (this, MainActivity.class);
         startActivity(intent);
     }
 
-    // Mitchell
+    // Mitchell again
+    // This code is so that the item tapped from the dropdown menu is actually selected
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
@@ -61,6 +62,7 @@ public class expense_inputscreen extends AppCompatActivity implements AdapterVie
     }
 
     // Mitchell
+    // Implemented from AdapterView.OnItemSelectedListener
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
