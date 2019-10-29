@@ -7,10 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class settingsPage extends AppCompatActivity {
 
+    // Mitchell: this may be redundant to declare objects like this, need to check
     private Button SetIncomeCategories;
     private Button setExpenseCategories;
+    private FloatingActionButton back; //this object is for the back button
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,14 @@ public class settingsPage extends AppCompatActivity {
                 goSetExpenseCategories();
             }
         });
+
+        back = (FloatingActionButton) findViewById(R.id.fab2);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                returnToMainMenuPlease();
+            }
+        });
     }
 
     // This function ebables the "Set Income Categories" button
@@ -45,6 +57,13 @@ public class settingsPage extends AppCompatActivity {
     // This function enables the "Set expense categories" button
     public void goSetExpenseCategories() {
         Intent intent = new Intent (this, set_expense_categories.class);
+        startActivity(intent);
+    }
+
+    // Mitchell: redundant function. I wish I could call the function from another class
+    // but those classes are not static, and I'm not instantiating them so no dice.
+    public void returnToMainMenuPlease() {
+        Intent intent = new Intent (this, MainActivity.class);
         startActivity(intent);
     }
 }
