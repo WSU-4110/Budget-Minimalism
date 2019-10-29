@@ -215,7 +215,7 @@
         android:textSize="18sp"
         android:typeface="normal"
         app:layout_constraintEnd_toStartOf="@+id/editText2"
-        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
