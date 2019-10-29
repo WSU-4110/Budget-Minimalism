@@ -52,8 +52,7 @@ public class expense_inputscreen extends AppCompatActivity implements AdapterVie
         startActivity(intent);
     }
 
-    // Mitchell again
-    // This code is so that the item tapped from the dropdown menu is actually selected
+    // This function allows the categories from the spinner to be selected and appear onscreen
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
