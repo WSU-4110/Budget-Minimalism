@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".settingsPage">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:tint="#676767"
+        app:backgroundTint="#6cff66"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/arrow_down_float" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="183dp"
