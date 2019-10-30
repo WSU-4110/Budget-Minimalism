@@ -18,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
     private Button button2;         //Main menu "Expense" button object
     private Button incomeButton;    //Main menu "Income" button object
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
