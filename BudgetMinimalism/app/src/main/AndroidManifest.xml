@@ -9,25 +9,40 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".splashScreen"></activity>
-        <activity android:name=".developerInfoPage" />
-        <activity android:name=".view_spending_delta" />
-        <activity android:name=".view_recent_budget_activity" />
-        <activity android:name=".set_income_categories" />
-        <activity android:name=".set_expense_categories" />
-        <activity android:name=".settingsPage" />
-        <activity android:name=".income_inputscreen" />
-        <activity android:name=".expense_inputscreen" />
+
+
         <activity
+
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
+
+
+        </activity>
+        <activity android:name=".splashScreen">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
+
+        <activity android:name=".settingsPage" />
+        <activity android:name=".income_inputscreen" />
+        <activity android:name=".expense_inputscreen" />
+
+
+        <activity android:name=".developerInfoPage" />
+        <activity android:name=".view_spending_delta" />
+        <activity android:name=".view_recent_budget_activity" />
+        <activity android:name=".set_income_categories" />
+        <activity android:name=".set_expense_categories" />
+
+
+
     </application>
 
 </manifest>

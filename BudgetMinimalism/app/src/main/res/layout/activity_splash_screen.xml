@@ -6,12 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".splashScreen">
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="186dp"
-        android:layout_height="116dp"
-        android:text="somebody make this work"
-        android:textSize="30sp"
-        tools:layout_editor_absoluteX="126dp"
-        tools:layout_editor_absoluteY="227dp" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="300dp"
+        android:layout_height="270dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="217dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="217dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
