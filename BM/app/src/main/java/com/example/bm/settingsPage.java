@@ -63,7 +63,7 @@ public class settingsPage extends AppCompatActivity {
     // Mitchell: redundant function. I wish I could call the function from another class
     // but those classes are not static, and I'm not instantiating them so no dice.
     public void returnToMainMenuPlease() {
-        Intent intent = new Intent (this, MainActivity.class);
+        Intent intent = new Intent (this, HomePageActivity.class);
         startActivity(intent);
     }
 }
