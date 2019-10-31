@@ -1,12 +1,12 @@
-package com.example.budget_minimalism;
+package com.example.bm;
 
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class splashScreen extends AppCompatActivity {
     private int SLEEP_TIMER=3;
@@ -43,7 +43,7 @@ public class splashScreen extends AppCompatActivity {
             catch (InterruptedException e){
                 e.printStackTrace();
             }
-            Intent intent =new Intent(splashScreen.this, loginactivity.class);
+            Intent intent =new Intent(splashScreen.this, MainActivity.class);
 
             startActivity(intent);
             splashScreen.this.finish();
