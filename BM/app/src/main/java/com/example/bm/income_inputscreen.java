@@ -45,7 +45,7 @@ public class income_inputscreen extends AppCompatActivity implements AdapterView
 
     // This function simply sends the user back to the main menu activity
     public void returnToMainMenuPlease() {
-        Intent intent = new Intent (this, MainActivity.class);
+        Intent intent = new Intent (this, HomePageActivity.class);
         startActivity(intent);
     }
 

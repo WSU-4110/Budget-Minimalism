@@ -90,7 +90,7 @@ public class HomePageActivity extends AppCompatActivity {
 
     // This function sends you to the view_recent_budget_activity
     public void sendYouToViewRecent() {
-        Intent intent = new Intent (this, view_recent_budget_activity.class);
+        Intent intent = new Intent (this, selectWhichViewPage.class);
         startActivity(intent);
     }
 

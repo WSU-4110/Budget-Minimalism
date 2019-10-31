@@ -28,6 +28,11 @@
     <string name="setexpensecats">Set Expense Categories</string>
     <string name="developerInfo">Developer Info</string>
     <string name="recentActivity">Recent Activity</string>
+    <string name="recentActivities">Recent Activity</string>
+    <string name="BudgetProgress">Budget Progess</string>
+    <string name="ViewSpending">Budget % Complete</string>
+    <string name="viewrecentbuttn">View Recent Activity</string>
+    <string name="ViewPercent">View Percent Complete</string>
 
     <!-- Below is a string array which hardcodes the expense categories -->
     <string-array name="expenseCategoriesArray">

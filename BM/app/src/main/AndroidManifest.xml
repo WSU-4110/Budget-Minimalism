@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".settingsPage"></activity>
-
+        <activity android:name=".selectWhichViewPage"></activity>
+        <activity android:name=".settingsPage" />
         <activity android:name=".income_inputscreen" />
         <activity android:name=".expense_inputscreen" />
         <activity android:name=".developerInfoPage" />

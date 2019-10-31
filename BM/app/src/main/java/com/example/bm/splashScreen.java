@@ -9,12 +9,17 @@ import android.view.WindowManager;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class splashScreen extends AppCompatActivity {
+
+    // Nahidul:
+    // Initialize the variable which determines splash screen time
     private int SLEEP_TIMER=3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
+        // Nahidul
+        // This function makes this activity full screen
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash_screen);
@@ -30,13 +35,14 @@ public class splashScreen extends AppCompatActivity {
 
     }
 
-
+    // Nahidul:
     private class LogoLauncher extends Thread{
 
         public void run(){
 
             try{
-
+                // Nahidul:
+                // Time that splash screen is displayed
                 sleep(1000*SLEEP_TIMER);
 
             }
@@ -47,7 +53,6 @@ public class splashScreen extends AppCompatActivity {
 
             startActivity(intent);
             splashScreen.this.finish();
-
 
 
         }

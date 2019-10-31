@@ -48,7 +48,7 @@ public class expense_inputscreen extends AppCompatActivity implements AdapterVie
     // Mitchell
     // Function which returns user to main menu from the expense input screen
     public void returnToMainMenuPlease() {
-        Intent intent = new Intent (this, MainActivity.class);
+        Intent intent = new Intent (this, HomePageActivity.class);
         startActivity(intent);
     }
 

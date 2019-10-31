@@ -48,20 +48,19 @@ public class MainActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
 
         FirebaseUser user = firebaseAuth.getCurrentUser();
-      /*  if (user != null){
-            finish();
-            startActivity(new Intent(MainActivity.this, SecondActivity.class));
-        }*/
 
+        //Mohammed
+        //After click on Sign In button it will validate the user email and pass
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 validate(Email.getText().toString(),Password.getText().toString());
 
-                //startActivity(new Intent(MainActivity.this, SecondActivity.class));
             }
         });
 
+        //Mohamed
+        //After click on Sign In button it will validate the user email and pass
         userSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
