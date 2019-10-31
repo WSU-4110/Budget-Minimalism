@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.budget_minimalism">
+    package="com.example.bm">
 
     <application
         android:allowBackup="true"
@@ -9,19 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".loginactivity"></activity>
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".splashScreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".settingsPage"></activity>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".settingsPage" />
         <activity android:name=".income_inputscreen" />
         <activity android:name=".expense_inputscreen" />
         <activity android:name=".developerInfoPage" />
@@ -29,6 +18,19 @@
         <activity android:name=".view_recent_budget_activity" />
         <activity android:name=".set_income_categories" />
         <activity android:name=".set_expense_categories" />
+        <activity android:name=".splashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".HomePageActivity"
+            android:label="HomePageActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
