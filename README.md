@@ -7,8 +7,7 @@
  ```Budget-Minimalism/BudgetMinimalism/app/src/main/java/com/example/budget_minimalism/```
 
 ### Installation
-Clone the repository and open the directory "Budget-Minimalism/BM" in Android Studio.
-You will need to download Android Q (API 29) and the Nexus 5x emulator.
+ - Instructions outlined in installation.md
 
 ### Documentation
 See: https://github.com/WSU-4110/Budget-Minimalism/wiki
