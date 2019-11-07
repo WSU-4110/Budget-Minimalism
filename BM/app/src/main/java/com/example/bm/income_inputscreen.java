@@ -21,7 +21,7 @@ public class income_inputscreen extends AppCompatActivity implements AdapterView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_income_inputscreen);
 
-        // Mitchell:
+
         // This code connects the xml back button and the java object
         // then it creates a click listener, so that when we click on it
         // the button calls the returnToMainMenuPlease()
@@ -49,7 +49,6 @@ public class income_inputscreen extends AppCompatActivity implements AdapterView
         startActivity(intent);
     }
 
-    // Mitchell
     // This code is so that the item tapped from the dropdown menu is actually selected
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

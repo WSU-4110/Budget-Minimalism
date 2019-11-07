@@ -21,6 +21,9 @@ public class splashScreen extends AppCompatActivity {
         // Nahidul
         // This function makes this activity full screen
         requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+
+
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash_screen);
 
@@ -28,6 +31,16 @@ public class splashScreen extends AppCompatActivity {
 
         LogoLauncher logoLauncher=new LogoLauncher();
         logoLauncher.start();
+
+
+
+
+
+
+
+
+
+
 
 
 

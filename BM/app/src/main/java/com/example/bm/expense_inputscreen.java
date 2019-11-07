@@ -18,12 +18,18 @@ public class expense_inputscreen extends AppCompatActivity implements AdapterVie
 
     private FloatingActionButton back;   //create object for back button
 
+
+    interface Redirect{
+        void redirectuser();
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expense_inputscreen);
 
-        // Mitchell:
+
         // This code connects the xml back button and the java object
         // then it creates a click listener, so that when we click on it
         // the button calls the returnToMainMenuPlease()
@@ -35,7 +41,7 @@ public class expense_inputscreen extends AppCompatActivity implements AdapterVie
             }
         });
 
-        // Mitchell
+
         // This code enables the categories spinner on the expense input page
         Spinner spinner = findViewById(R.id.spinner4); // create new spinner object
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.expenseCategoriesArray, android.R.layout.simple_spinner_item);
@@ -45,9 +51,9 @@ public class expense_inputscreen extends AppCompatActivity implements AdapterVie
 
 
     }
-    // Mitchell
+
     // Function which returns user to main menu from the expense input screen
-    public void returnToMainMenuPlease() {
+    public void returnToMainMenuPlease()  {
         Intent intent = new Intent (this, HomePageActivity.class);
         startActivity(intent);
     }
