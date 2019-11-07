@@ -6,18 +6,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 public class HomePageActivity extends AppCompatActivity {
-    // Object name declarations
-    private Button button2;         //Main menu "Expense" button object
-    private Button incomeButton;    //Main menu "Income" button object
-    private Button viewButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +25,7 @@ public class HomePageActivity extends AppCompatActivity {
         // We really need to change the strings.xml file so its not so confusing but...
         // then it creates a click listener, so that when we click on it
         // the button calls the openActivity_expense_inputscreen()
-        button2 = (Button) findViewById(R.id.button2); // Main menu sends to expense page
+        Button button2 = (Button) findViewById(R.id.button2); // Main menu sends to expense page
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,7 +37,7 @@ public class HomePageActivity extends AppCompatActivity {
         // This code connects the xml "Income" button and the java object "incomeButton"
         // then it creates a click listener, so that when we click on it
         // the button calls the openActivity_expense_inputscreen()
-        incomeButton = (Button) findViewById(R.id.incomeButton);
+        Button incomeButton = (Button) findViewById(R.id.incomeButton);
         incomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,7 +56,7 @@ public class HomePageActivity extends AppCompatActivity {
             }
         });
 
-        viewButton = (Button) findViewById(R.id.button3);
+        Button viewButton = (Button) findViewById(R.id.button3);
         viewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

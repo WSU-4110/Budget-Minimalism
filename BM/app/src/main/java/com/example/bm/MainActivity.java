@@ -1,5 +1,4 @@
 package com.example.bm;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,10 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -55,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 validate(Email.getText().toString(),Password.getText().toString());
-
             }
         });
 
@@ -70,11 +66,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void validate (String userEmail, String userPassword){
-
         progressDialog.setMessage("Progressing!!!");
         progressDialog.show();
         progressDialog.dismiss();
-
         firebaseAuth.signInWithEmailAndPassword(userEmail,userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> t) {
@@ -82,10 +76,10 @@ public class MainActivity extends AppCompatActivity {
                     progressDialog.dismiss();
                     Toast.makeText(MainActivity.this,"Login Successfull" ,Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(MainActivity.this, HomePageActivity.class));
-                }else{
+                }
+                else{
                     Toast.makeText(MainActivity.this,"Log in failed",Toast.LENGTH_SHORT).show();
                     progressDialog.dismiss();
-
                 }
             }
         });

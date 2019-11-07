@@ -13,7 +13,6 @@ public class selectWhichViewPage extends AppCompatActivity {
     // Ian Wixson
     private Button viewRecent;
     private Button viewPercent;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
