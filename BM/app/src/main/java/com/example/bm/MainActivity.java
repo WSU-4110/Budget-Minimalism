@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     //private int counter = 5;
     private TextView userSignup;
 
-    private FirebaseAuth firebaseAuth;
+    private FirebaseAuth firebaseAuth;  // Firebase authentication
     private ProgressDialog progressDialog;
 
 
@@ -42,26 +42,23 @@ public class MainActivity extends AppCompatActivity {
         //Info = (TextView)findViewById(R.id.btnInfo);
         Login = (Button) findViewById(R.id.btnLogin);
         userSignup = (TextView) findViewById(R.id.tvsignup);
-
-        //Info.setText("No Of attempts remaining: 5");
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
 
+        //Mohammed Rahin
+        //Connecting Firebase Authenticaion
         FirebaseUser user = firebaseAuth.getCurrentUser();
-      /*  if (user != null){
-            finish();
-            startActivity(new Intent(MainActivity.this, SecondActivity.class));
-        }*/
 
+        //Mohammed Rahin
+        //Log in Button
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 validate(Email.getText().toString(),Password.getText().toString());
-
-                //startActivity(new Intent(MainActivity.this, SecondActivity.class));
             }
         });
 
+        //Sign up button
         userSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //Mohammed Rahin
+    //Validating the email and pass from firebase
     private void validate (String userEmail, String userPassword){
 
         progressDialog.setMessage("Progressing!!!");

@@ -17,7 +17,7 @@ public class HomePageActivity extends AppCompatActivity {
     // Object name declarations
     private Button button2;         //Main menu "Expense" button object
     private Button incomeButton;    //Main menu "Income" button object
-    private Button viewButton;
+    private Button viewButton;      //Main menu "View" button object
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

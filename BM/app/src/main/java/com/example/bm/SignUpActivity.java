@@ -1,9 +1,5 @@
 package com.example.bm;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import androidx.annotation.NonNull;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +7,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -34,8 +33,6 @@ public class SignUpActivity extends AppCompatActivity {
         setupUIViews();
 
         //Mohammed
-
-
         firebaseAuth = FirebaseAuth.getInstance();
 
         regButton.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +61,8 @@ public class SignUpActivity extends AppCompatActivity {
                 }
             }
         });
-        //Mohammed
+        //Mohammed Rahin
+        //this allows the user to click the button and and go onto MainActivity
         userLognin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,7 +72,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     }
 
-    //Mohammed
+    //Mohammed Rahin
     private void setupUIViews(){
         userName = (EditText)findViewById (R.id.etUserName);
         userPassword = (EditText)findViewById (R.id.etUserPassword);

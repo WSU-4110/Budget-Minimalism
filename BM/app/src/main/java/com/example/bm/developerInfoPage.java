@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class developerInfoPage extends AppCompatActivity {
+public class  developerInfoPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

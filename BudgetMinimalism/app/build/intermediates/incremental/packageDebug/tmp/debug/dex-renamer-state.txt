@@ -1,0 +1,4 @@
+#Wed Oct 30 14:50:45 EDT 2019
+base.0=C\:\\Users\\Rah\\AndroidStudioProjects\\Budget-Minimalism\\BudgetMinimalism\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

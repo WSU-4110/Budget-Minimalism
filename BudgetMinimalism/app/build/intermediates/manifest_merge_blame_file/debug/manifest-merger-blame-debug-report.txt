@@ -1,0 +1,80 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.budget_minimalism"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml
+10
+11    <application
+11-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:5:5-46:19
+12        android:allowBackup="true"
+12-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:6:9-35
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.0.1] C:\Users\Rah\.gradle\caches\transforms-2\files-2.1\46da25c3e2ae6308b2227b660caa604d\core-1.0.1\AndroidManifest.xml:22:18-86
+14        android:debuggable="true"
+15        android:icon="@mipmap/ic_launcher"
+15-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:7:9-43
+16        android:label="@string/app_name"
+16-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:8:9-41
+17        android:roundIcon="@mipmap/ic_launcher_round"
+17-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:9:9-54
+18        android:supportsRtl="true"
+18-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:10:9-35
+19        android:testOnly="true"
+20        android:theme="@style/AppTheme" >
+20-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:11:9-40
+21        <activity
+21-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:14:9-21:20
+22            android:name="com.example.budget_minimalism.MainActivity"
+22-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:16:13-41
+23            android:label="@string/app_name"
+23-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:17:13-45
+24            android:theme="@style/AppTheme.NoActionBar" >
+24-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:18:13-56
+25        </activity>
+26        <activity android:name="com.example.budget_minimalism.splashScreen" >
+26-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:22:9-30:20
+26-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:22:19-47
+27            <intent-filter>
+27-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:24:13-28:29
+28                <action android:name="android.intent.action.MAIN" />
+28-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:25:17-69
+28-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:25:25-66
+29
+30                <category android:name="android.intent.category.LAUNCHER" />
+30-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:27:17-77
+30-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:27:27-74
+31            </intent-filter>
+32        </activity>
+33        <activity android:name="com.example.budget_minimalism.settingsPage" />
+33-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:33:9-50
+33-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:33:19-47
+34        <activity android:name="com.example.budget_minimalism.income_inputscreen" />
+34-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:34:9-56
+34-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:34:19-53
+35        <activity android:name="com.example.budget_minimalism.expense_inputscreen" />
+35-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:35:9-57
+35-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:35:19-54
+36        <activity android:name="com.example.budget_minimalism.developerInfoPage" />
+36-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:38:9-55
+36-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:38:19-52
+37        <activity android:name="com.example.budget_minimalism.view_spending_delta" />
+37-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:39:9-57
+37-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:39:19-54
+38        <activity android:name="com.example.budget_minimalism.view_recent_budget_activity" />
+38-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:40:9-65
+38-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:40:19-62
+39        <activity android:name="com.example.budget_minimalism.set_income_categories" />
+39-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:41:9-59
+39-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:41:19-56
+40        <activity android:name="com.example.budget_minimalism.set_expense_categories" />
+40-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:42:9-60
+40-->C:\Users\Rah\AndroidStudioProjects\Budget-Minimalism\BudgetMinimalism\app\src\main\AndroidManifest.xml:42:19-57
+41    </application>
+42
+43</manifest>
