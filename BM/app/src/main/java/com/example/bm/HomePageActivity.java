@@ -23,8 +23,8 @@ public class HomePageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //Toolbar toolbar = findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
         // Mitchell:
         // This code connects the xml "Expense" button and the java object "button2"
@@ -93,7 +93,7 @@ public class HomePageActivity extends AppCompatActivity {
         Intent intent = new Intent (this, selectWhichViewPage.class);
         startActivity(intent);
     }
-
+/**
     // Android Studio default code
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -117,5 +117,5 @@ public class HomePageActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
+**/
 }
