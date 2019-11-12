@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.bm">
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/logo"
+        android:icon="@drawable/appicon"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/logo"
+        android:roundIcon="@drawable/appicon"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".selectWhichViewPage"></activity>
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".selectWhichViewPage"/>
         <activity android:name=".settingsPage" />
         <activity android:name=".income_inputscreen" />
         <activity android:name=".expense_inputscreen" />
