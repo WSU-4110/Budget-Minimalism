@@ -33,6 +33,10 @@
     <string name="ViewSpending">Budget % Complete</string>
     <string name="viewrecentbuttn">View Recent Activity</string>
     <string name="ViewPercent">View Percent Complete</string>
+    <string name="password">Password</string>
+    <string name="signin">Sign in</string>
+    <string name="email">Email</string>
+    <string name="signupprompt">Don\'t Have an Account? SIGN UP</string>
 
     <!-- Below is a string array which hardcodes the expense categories -->
     <string-array name="expenseCategoriesArray">
