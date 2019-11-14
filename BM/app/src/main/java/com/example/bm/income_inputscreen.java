@@ -54,12 +54,14 @@ public class income_inputscreen extends AppCompatActivity implements AdapterView
             @Override
             public void onClick(View v) {
                 String stringIN = Description.getText().toString();
-                // toastMessage(stringIN);
-                if(!stringIN.equals("")) {
+                 toastMessage(stringIN);
+                 /*
+                 if(!stringIN.equals("")) {
                     insertData(stringIN);
                     // insertData function written by Mitchell
                     // not a library function, see below
                 }
+                */
             }
         });
 
@@ -84,6 +86,7 @@ public class income_inputscreen extends AppCompatActivity implements AdapterView
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
     }
+
 
     // Mitchell
     // SQLite progress maybe?

@@ -42,10 +42,10 @@ public class view_recent_budget_activity extends AppCompatActivity {
         mitchList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String name = adapterView.getItemAtPosition(i).toString();
-                Log.d(TAG, "onItemClick: You Clicked on " + name);
+                String itemThing = adapterView.getItemAtPosition(i).toString();
+                Log.d(TAG, "onItemClick: You Clicked on " + itemThing);
 
-                Cursor data = instantiatedHelper.getItemID(name); //get the id associated with that name
+                Cursor data = instantiatedHelper.getItem(itemThing); //get the id associated with that name
                 int itemID = -1;
                 while (data.moveToNext()) {
                     itemID = data.getInt(1);

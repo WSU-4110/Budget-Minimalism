@@ -1,3 +1,8 @@
+//
+// This code is setup as an attempt to make an SQlite database
+// Its not working so well, we will probably pivot to firebase
+
+
 package com.example.bm;
 
 import android.database.sqlite.SQLiteOpenHelper;
@@ -14,9 +19,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TABLE_NAME = "Transactions";
     private static final String COL1 = "Description";
     private static final String COL2 = "Amount";
+    private static final String COL3 = "Category";
 
 
-    // Defatult constructor
+    // Default constructor
     public DatabaseHelper(Context context) {
         super(context, TABLE_NAME, null, 1);
     }
@@ -38,7 +44,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(mitchDB);
     }
 
-    public boolean addData(String item) {
+    void addData(String item) {
         SQLiteDatabase mitchDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL2, item);
@@ -46,22 +52,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //Log.d(TAG, "addData: Adding " + item + " to " + TABLE_NAME);
 
         long result = mitchDB.insert(TABLE_NAME, null, contentValues);
-
-        //if date as inserted incorrectly it will return -1
-        return result != -1;
     }
 
-    public Cursor getData(){
+    Cursor getData(){
         SQLiteDatabase mitchDB = this.getWritableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME;
-        Cursor data = mitchDB.rawQuery(query, null);
-        return data;
+        Cursor datuh = mitchDB.rawQuery(query, null);
+        return datuh;
     }
 
-    public Cursor getItemID(String name){
+    Cursor getItem(String str){
         SQLiteDatabase mitchDB = this.getWritableDatabase();
         String query = "SELECT " + COL1 + " FROM " + TABLE_NAME +
-                " WHERE " + COL2 + " = '" + name + "'";
+                " WHERE " + COL2 + " = '" + str + "'";
         Cursor data = mitchDB.rawQuery(query, null);
         return data;
     }
@@ -78,13 +81,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public void deleteName(int id, String name){
+    public void delete(int id, String amount){
         SQLiteDatabase mitchDB = this.getWritableDatabase();
         String query = "DELETE FROM " + TABLE_NAME + " WHERE "
                 + COL1 + " = '" + id + "'" +
-                " AND " + COL2 + " = '" + name + "'";
+                " AND " + COL2 + " = '" + amount + "'";
         Log.d(TAG, "deleteName: query: " + query);
-        Log.d(TAG, "deleteName: Deleting " + name + " from database.");
+        Log.d(TAG, "deleteName: Deleting " + amount + " from database.");
         mitchDB.execSQL(query);
     }
 }
