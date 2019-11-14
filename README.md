@@ -14,5 +14,5 @@
 Checkout the [wiki](https://github.com/WSU-4110/Budget-Minimalism/wiki)
 
 ### Screens
-![alt-text-2](https://github.com/WSU-4110/Budget-Minimalism/blob/master/screenshots/mainMenu.PNG "MainMenu  ")
+![alt-text-2](https://github.com/WSU-4110/Budget-Minimalism/blob/master/screenshots/mainMenu.png "MainMenu  ")
 ![alt-text-1](https://github.com/WSU-4110/Budget-Minimalism/blob/master/screenshots/incomeInput.png "IncomeInput")
