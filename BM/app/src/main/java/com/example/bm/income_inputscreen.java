@@ -9,9 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class income_inputscreen extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
@@ -42,8 +40,9 @@ public class income_inputscreen extends AppCompatActivity implements AdapterView
         // Mitchell
         // trying to get user input working on description editText box
         Description = findViewById(R.id.editText20);
-        submitButton = (Button) findViewById(R.id.submitButton); // no need to cast here, not sure why
+        submitButton = (Button) findViewById(R.id.incomeSubmit); // no need to cast here, not sure why
         submitButton.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 String stringIN = Description.getText().toString();
@@ -81,6 +80,5 @@ public class income_inputscreen extends AppCompatActivity implements AdapterView
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-
     }
 }

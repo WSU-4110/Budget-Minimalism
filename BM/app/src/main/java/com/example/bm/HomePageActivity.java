@@ -2,13 +2,10 @@ package com.example.bm;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -43,7 +40,7 @@ public class HomePageActivity extends AppCompatActivity {
         // This code connects the xml "Income" button and the java object "incomeButton"
         // then it creates a click listener, so that when we click on it
         // the button calls the openActivity_expense_inputscreen()
-        incomeButton = (Button) findViewById(R.id.incomeButton);
+        incomeButton = (Button) findViewById(R.id.expenseSubmit);
         incomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
