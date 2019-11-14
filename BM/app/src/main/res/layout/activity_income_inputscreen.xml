@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/incomeButton3"
+        android:id="@+id/submitButton"
         android:layout_width="129dp"
         android:layout_height="76dp"
         android:layout_marginBottom="16dp"
