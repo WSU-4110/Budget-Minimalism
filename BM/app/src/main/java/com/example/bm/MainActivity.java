@@ -21,7 +21,6 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     //Mohammed
-    // Declare local private variables
     private EditText Email;
     private EditText Password;
     private TextView Info;
