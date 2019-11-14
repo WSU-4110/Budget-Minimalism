@@ -9,13 +9,14 @@ import android.util.Log;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
+    // One column for Descriptions, one for Amounts, table is named "Transactions"
     private static final String TAG = "DatabaseHelper";
     private static final String TABLE_NAME = "Transactions";
     private static final String COL1 = "Description";
     private static final String COL2 = "Amount";
 
 
-    // Constructor
+    // Defatult constructor
     public DatabaseHelper(Context context) {
         super(context, TABLE_NAME, null, 1);
     }
@@ -23,9 +24,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase mitchDB) {
+        /*
         String createTable = "CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COL2 +" TEXT)";
         mitchDB.execSQL(createTable);
+        */
+
     }
 
     @Override
@@ -39,7 +43,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL2, item);
 
-        Log.d(TAG, "addData: Adding " + item + " to " + TABLE_NAME);
+        //Log.d(TAG, "addData: Adding " + item + " to " + TABLE_NAME);
 
         long result = mitchDB.insert(TABLE_NAME, null, contentValues);
 
@@ -62,13 +66,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
-    /**
 
-     * Updates the name field
-     * @param newName
-     * @param id
-     * @param oldName
-*/
     public void updateName(String newName, int id, String oldName){
         SQLiteDatabase mitchDB = this.getWritableDatabase();
         String query = "UPDATE " + TABLE_NAME + " SET " + COL2 +
@@ -78,11 +76,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Log.d(TAG, "updateName: Setting name to " + newName);
         mitchDB.execSQL(query);
     }
-/**
-     * Delete from database
-     * @param id
-     * @param name
-*/
+
+
     public void deleteName(int id, String name){
         SQLiteDatabase mitchDB = this.getWritableDatabase();
         String query = "DELETE FROM " + TABLE_NAME + " WHERE "
