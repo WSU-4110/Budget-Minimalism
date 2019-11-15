@@ -7,8 +7,7 @@
 
 ### For installation instructions see [installation.md](https://github.com/WSU-4110/Budget-Minimalism/blob/master/installation.md)
 
-### Documentation
-Checkout the [wiki](https://github.com/WSU-4110/Budget-Minimalism/wiki)
+### For documentation checkout the [wiki](https://github.com/WSU-4110/Budget-Minimalism/wiki)
 
 ### Screens
 ![alt-text-2](https://github.com/WSU-4110/Budget-Minimalism/blob/master/screenshots/mainMenu.png "MainMenu  ")
