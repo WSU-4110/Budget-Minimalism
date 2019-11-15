@@ -5,7 +5,7 @@
  - XML code is [here](https://github.com/WSU-4110/Budget-Minimalism/tree/master/BM/app/src/main/res/layout)
  - Java code is [here](https://github.com/WSU-4110/Budget-Minimalism/tree/master/BM/app/src/main/java/com/example/bm)
 
-### For installation see [installation.md](https://github.com/WSU-4110/Budget-Minimalism/blob/master/installation.md)
+### For installation instructions see [installation.md](https://github.com/WSU-4110/Budget-Minimalism/blob/master/installation.md)
 
 ### Documentation
 Checkout the [wiki](https://github.com/WSU-4110/Budget-Minimalism/wiki)
