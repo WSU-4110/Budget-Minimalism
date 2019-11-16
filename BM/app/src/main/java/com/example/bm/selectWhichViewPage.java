@@ -39,9 +39,7 @@ public class selectWhichViewPage extends AppCompatActivity {
         back = (FloatingActionButton) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                public void onClick(View v) {returnToMainMenuPlease(); }
-            }
+            public void onClick(View v) { returnToMainMenuPlease(); }
         });
     }
 
