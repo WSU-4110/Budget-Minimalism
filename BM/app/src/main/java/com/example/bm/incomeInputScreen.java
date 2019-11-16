@@ -52,7 +52,7 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
         spinner.setOnItemSelectedListener(this);
 
         // Mitchell
-        // --------------------------USER INPUT -----------------------------
+        // getting user input to work finally
         DescriptionBox = findViewById(R.id.incomeDescript);
         submitButton = (Button) findViewById(R.id.incomeSubmit);
         submitButton.setOnClickListener(new View.OnClickListener() {
@@ -61,17 +61,16 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
             public void onClick(View v) {
                 String stringIN = DescriptionBox.getText().toString();
                 if(!stringIN.equals("")) {
-                    // Does not work because has to be called on a secondary thread
                     description newDataBaseItem = new description(stringIN);
                     dataViewModel.insert(newDataBaseItem);
+                    returnToMainMenuPlease();
                 } else {
                     toastMessage("Nothing to submit");
                 }
             }
         });
-
-
     } // end onCreate
+
 
     // This function simply sends the user back to the main menu activity
     public void returnToMainMenuPlease() {
