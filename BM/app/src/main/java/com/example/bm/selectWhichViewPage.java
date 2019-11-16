@@ -7,12 +7,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 
 public class selectWhichViewPage extends AppCompatActivity {
-
-    // Ian Wixson
+    
     private Button viewRecent;
     private Button viewPercent;
+    private FloatingActionButton back;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +33,18 @@ public class selectWhichViewPage extends AppCompatActivity {
         viewPercent = (Button) findViewById(R.id.viewPercent); // Main menu sends to expense page
         viewPercent.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                openViewPercent();
-            }
+            public void onClick(View v) { openViewPercent(); }
         });
 
+        back = (FloatingActionButton) findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                public void onClick(View v) {returnToMainMenuPlease(); }
+            }
+        });
     }
 
-    // Ian Wixson
     public void openViewRecentPage() {
         Intent intent = new Intent(this, viewRecentBudgetActivity.class);
         startActivity(intent);
@@ -45,6 +52,12 @@ public class selectWhichViewPage extends AppCompatActivity {
 
     public void openViewPercent() {
         Intent intent = new Intent(this, viewSpendingDelta.class);
+        startActivity(intent);
+    }
+
+    // Mitchell
+    public void returnToMainMenuPlease() {
+        Intent intent = new Intent (this, homePageActivity.class);
         startActivity(intent);
     }
 

@@ -70,7 +70,7 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
             }
         });
 
-        
+
     } // end onCreate
 
     // This function simply sends the user back to the main menu activity
