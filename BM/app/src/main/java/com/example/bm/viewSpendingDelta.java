@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class view_spending_delta extends AppCompatActivity {
+public class viewSpendingDelta extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

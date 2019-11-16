@@ -12,9 +12,7 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.lang.reflect.Array;
-
-public class expense_inputscreen extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class expenseInputScreen extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private FloatingActionButton back;   //create object for back button
 
@@ -48,7 +46,7 @@ public class expense_inputscreen extends AppCompatActivity implements AdapterVie
     // Mitchell
     // Function which returns user to main menu from the expense input screen
     public void returnToMainMenuPlease() {
-        Intent intent = new Intent (this, HomePageActivity.class);
+        Intent intent = new Intent (this, homePageActivity.class);
         startActivity(intent);
     }
 

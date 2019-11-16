@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomePageActivity">
+    tools:context=".homePageActivity">
 
     <include layout="@layout/content_main" />
 
@@ -14,9 +14,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:tint="#676767"
         android:background="#6cff66"
+        android:tint="#676767"
         app:backgroundTint="#6cff66"
-        app:srcCompat="?attr/actionModeCloseDrawable" />
+        app:srcCompat="@drawable/ic_settings_black_24dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

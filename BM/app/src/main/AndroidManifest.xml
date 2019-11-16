@@ -13,13 +13,13 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".selectWhichViewPage"/>
         <activity android:name=".settingsPage" />
-        <activity android:name=".income_inputscreen" />
-        <activity android:name=".expense_inputscreen" />
+        <activity android:name=".incomeInputScreen" />
+        <activity android:name=".expenseInputScreen" />
         <activity android:name=".developerInfoPage" />
-        <activity android:name=".view_spending_delta" />
-        <activity android:name=".view_recent_budget_activity" />
-        <activity android:name=".set_income_categories" />
-        <activity android:name=".set_expense_categories" />
+        <activity android:name=".viewSpendingDelta" />
+        <activity android:name=".viewRecentBudgetActivity" />
+        <activity android:name=".setIncomeCategories" />
+        <activity android:name=".setExpenseCategories" />
         <activity android:name=".splashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,11 +28,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HomePageActivity"
+            android:name=".homePageActivity"
             android:label="HomePageActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".signUpActivity" />
+        <activity android:name=".mainActivity" />
     </application>
 
 </manifest>

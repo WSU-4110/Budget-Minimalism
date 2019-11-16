@@ -50,20 +50,20 @@ public class settingsPage extends AppCompatActivity {
 
     // This function ebables the "Set Income Categories" button
     public void goSetIncomeCategories() {
-        Intent intent = new Intent (this, set_income_categories.class);
+        Intent intent = new Intent (this, setIncomeCategories.class);
         startActivity(intent);
     }
 
     // This function enables the "Set expense categories" button
     public void goSetExpenseCategories() {
-        Intent intent = new Intent (this, set_expense_categories.class);
+        Intent intent = new Intent (this, com.example.bm.setExpenseCategories.class);
         startActivity(intent);
     }
 
     // Mitchell: redundant function. I wish I could call the function from another class
     // but those classes are not static, and I'm not instantiating them so no dice.
     public void returnToMainMenuPlease() {
-        Intent intent = new Intent (this, HomePageActivity.class);
+        Intent intent = new Intent (this, homePageActivity.class);
         startActivity(intent);
     }
 }

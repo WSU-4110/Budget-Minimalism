@@ -8,14 +8,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class set_income_categories extends AppCompatActivity {
+public class setExpenseCategories extends AppCompatActivity {
 
     private FloatingActionButton back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_set_income_categories);
+        setContentView(R.layout.activity_set_expense_categories);
         back = (FloatingActionButton) findViewById(R.id.fab);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,6 +25,8 @@ public class set_income_categories extends AppCompatActivity {
         });
     }
 
+
+    // Mitchell - return to settings
     public void returnToSettingsPage() {
         Intent intent = new Intent (this, settingsPage.class);
         startActivity(intent);

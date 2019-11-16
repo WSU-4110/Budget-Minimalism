@@ -1,8 +1,11 @@
 package com.example.bm;
 
 import android.content.Intent;
+import android.inputmethodservice.ExtractEditText;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
+import android.view.inputmethod.ExtractedTextRequest;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -10,20 +13,23 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class income_inputscreen extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class incomeInputScreen extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    private FloatingActionButton back; //this object is for the back button
-    private EditText Description;
+    private FloatingActionButton back;
+    private EditText DescriptionBox;
     private Button submitButton;
-
-    DatabaseHelper instantiatedHelper;
+    private dataViewModel dataViewModel;
+    public static final String EXTRA_REPLY = "com.example.android.wordlistsql.REPLY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_income_inputscreen);
+        dataViewModel = new ViewModelProvider(this).get(dataViewModel.class);
 
         // Mitchell:
         // This code connects the xml back button and the java object
@@ -46,31 +52,30 @@ public class income_inputscreen extends AppCompatActivity implements AdapterView
         spinner.setOnItemSelectedListener(this);
 
         // Mitchell
-        // trying to get user input working on description editText box
-        Description = findViewById(R.id.editText20);
-        submitButton = (Button) findViewById(R.id.incomeSubmit); // no need to cast here, not sure why
+        // --------------------------USER INPUT -----------------------------
+        DescriptionBox = findViewById(R.id.incomeDescript);
+        submitButton = (Button) findViewById(R.id.incomeSubmit);
         submitButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                String stringIN = Description.getText().toString();
-                 toastMessage(stringIN);
-                 /*
-                 if(!stringIN.equals("")) {
-                    insertData(stringIN);
-                    // insertData function written by Mitchell
-                    // not a library function, see below
+                String stringIN = DescriptionBox.getText().toString();
+                if(!stringIN.equals("")) {
+                    // Does not work because has to be called on a secondary thread
+                    description newDataBaseItem = new description(stringIN);
+                    dataViewModel.insert(newDataBaseItem);
+                } else {
+                    toastMessage("Nothing to submit");
                 }
-                */
             }
         });
 
-
+        
     } // end onCreate
 
     // This function simply sends the user back to the main menu activity
     public void returnToMainMenuPlease() {
-        Intent intent = new Intent (this, HomePageActivity.class);
+        Intent intent = new Intent (this, homePageActivity.class);
         startActivity(intent);
     }
 
@@ -78,28 +83,13 @@ public class income_inputscreen extends AppCompatActivity implements AdapterView
     // This code is so that the item tapped from the dropdown menu is actually selected
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String text = parent.getItemAtPosition(position).toString();
-        toastMessage(text);
+        //String text = parent.getItemAtPosition(position).toString();
+        //toastMessage(text);
     }
 
     // Code created by default in android studio
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-    }
-
-
-    // Mitchell
-    // SQLite progress maybe?
-    public void insertData(String newData) {
-        /*
-        boolean insertData = instantiatedHelper.addData(newData);
-        if (insertData) {
-            toastMessage("Data added");
-        } else {
-            toastMessage("Data input failure");
-        }
-        */
-        instantiatedHelper.addData(newData);
     }
 
     // Toast message function for data entry input

@@ -12,7 +12,7 @@ public class splashScreen extends AppCompatActivity {
 
     // Nahidul:
     // Initialize the variable which determines splash screen time
-    private int SLEEP_TIMER=3;
+    private int SLEEP_TIMER=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +49,7 @@ public class splashScreen extends AppCompatActivity {
             catch (InterruptedException e){
                 e.printStackTrace();
             }
-            Intent intent =new Intent(splashScreen.this, MainActivity.class);
+            Intent intent =new Intent(splashScreen.this, mainActivity.class);
 
             startActivity(intent);
             splashScreen.this.finish();

@@ -18,7 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity {
+public class mainActivity extends AppCompatActivity {
 
     //Mohammed
     private EditText Email;
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         userSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, SignUpActivity.class));
+                startActivity(new Intent(mainActivity.this, signUpActivity.class));
             }
         });
     }
@@ -80,10 +80,10 @@ public class MainActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> t) {
                 if (t.isSuccessful()){
                     progressDialog.dismiss();
-                    Toast.makeText(MainActivity.this,"Login Successfull" ,Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(MainActivity.this, HomePageActivity.class));
+                    Toast.makeText(mainActivity.this,"Login Successfull" ,Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(mainActivity.this, homePageActivity.class));
                 }else{
-                    Toast.makeText(MainActivity.this,"Log in failed",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mainActivity.this,"Log in failed",Toast.LENGTH_SHORT).show();
                     progressDialog.dismiss();
 
                 }

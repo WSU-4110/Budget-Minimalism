@@ -39,12 +39,12 @@ public class selectWhichViewPage extends AppCompatActivity {
 
     // Ian Wixson
     public void openViewRecentPage() {
-        Intent intent = new Intent(this, view_recent_budget_activity.class);
+        Intent intent = new Intent(this, viewRecentBudgetActivity.class);
         startActivity(intent);
     }
 
     public void openViewPercent() {
-        Intent intent = new Intent(this, view_spending_delta.class);
+        Intent intent = new Intent(this, viewSpendingDelta.class);
         startActivity(intent);
     }
 

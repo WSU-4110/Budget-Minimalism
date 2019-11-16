@@ -4,17 +4,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
-public class HomePageActivity extends AppCompatActivity {
+public class homePageActivity extends AppCompatActivity {
     // Object name declarations
     private Button button2;         //Main menu "Expense" button object
     private Button incomeButton;    //Main menu "Income" button object
     private Button viewButton;
+    public static final int NEW_WORD_ACTIVITY_REQUEST_CODE = 1;
+    private dataViewModel dataViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,13 +72,13 @@ public class HomePageActivity extends AppCompatActivity {
     }
     // Mitchell wrote this function
     public void openActivity_expense_inputscreen() {
-        Intent intent = new Intent(this, expense_inputscreen.class);
+        Intent intent = new Intent(this, expenseInputScreen.class);
         startActivity(intent);
     }
 
     // Mitchell
     public void openActivity_income_inputscreen() {
-        Intent intent = new Intent(this, income_inputscreen.class);
+        Intent intent = new Intent(this, incomeInputScreen.class);
         startActivity(intent);
     }
 

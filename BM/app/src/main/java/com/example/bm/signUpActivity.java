@@ -18,7 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 
-public class SignUpActivity extends AppCompatActivity {
+public class signUpActivity extends AppCompatActivity {
 
     private EditText userName, userPassword, userEmail;
     private Button regButton;
@@ -51,10 +51,10 @@ public class SignUpActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(SignUpActivity.this, "Registration successfull", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(SignUpActivity.this,MainActivity.class));
+                                Toast.makeText(signUpActivity.this, "Registration successfull", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(signUpActivity.this, mainActivity.class));
                             }else{
-                                Toast.makeText(SignUpActivity.this, "Registration failed", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(signUpActivity.this, "Registration failed", Toast.LENGTH_SHORT).show();
 
                             }
                         }
@@ -68,7 +68,7 @@ public class SignUpActivity extends AppCompatActivity {
         userLognin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SignUpActivity.this, MainActivity.class));
+                startActivity(new Intent(signUpActivity.this, mainActivity.class));
             }
         });
 

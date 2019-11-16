@@ -4,26 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view_recent_budget_activity">
+    tools:context=".viewRecentBudgetActivity">
 
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="256dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="68dp"
-        android:text="@string/recentActivities"
-        android:textSize="36sp"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/viewback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:tint="#676767"
+        app:backgroundTint="#6cff66"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.568"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:srcCompat="?attr/actionModeCloseDrawable" />
 
-    <ListView
-        android:id="@+id/listview"
-        android:layout_width="409dp"
-        android:layout_height="609dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="121dp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/darker_gray"
+        tools:listitem="@layout/recyclerview_item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
