@@ -9,34 +9,45 @@ import androidx.room.PrimaryKey;
 
 // Mitchell
 // This is an "Entity" for user input in the SQLite database
-@Entity(tableName = "description_table")
-public class description {
+@Entity(tableName = "transaction_table")
+public class transactionEntity {
 
     @PrimaryKey
     @NonNull
-    @ColumnInfo(name = "description")
+    @ColumnInfo(name = "transactionEntity")
     private String description;
+    //@ColumnInfo(name = "amount")
+    //private String amount;
 
     // Default constructor
-    public description() {
+    public transactionEntity() {
         this.description = "NULL";
+       //this.amount = "NULL";
     }
 
     // Parameterized constructor
-    public description(@NonNull String passedDescription) {
+    public transactionEntity(@NonNull String passedDescription) {
         this.description = passedDescription;
     }
 
     // Mitchell
-    // getter
     public void setDescription(@NonNull String passedDescription){
         this.description = passedDescription;
     }
 
     // Mitchell
-    // getter
     @NonNull
     public String getDescription() {
         return this.description;
     }
+
+    /* Uncomment after learning more about columns
+    public void setAmount(@NonNull String amount) {
+        this.amount = amount;
+    }
+
+    public String getAmount() {
+        return this.transactionEntity;
+    }
+    */
 }

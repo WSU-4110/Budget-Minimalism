@@ -10,13 +10,13 @@ import java.util.List;
 @Dao
 public interface dataDAO {
 
-    @Query("SELECT * from description_table ORDER BY description")
-    LiveData<List<description>> getAlphabetizedWords();
+    @Query("SELECT * from transaction_table ORDER BY transactionEntity")
+    LiveData<List<transactionEntity>> getAlphabetizedWords();
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    void insert(description description);
+    void insert(transactionEntity transactionEntity);
 
-    @Query("DELETE FROM description_table")
+    @Query("DELETE FROM transaction_table")
     void deleteAll();
 
 }

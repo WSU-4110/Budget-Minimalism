@@ -14,7 +14,7 @@ import java.util.concurrent.Executors;
 // Mitchell
 // This is the backend, you don't need to mess around in here directly
 
-@Database(entities = {description.class}, version = 1, exportSchema = false)
+@Database(entities = {transactionEntity.class}, version = 1, exportSchema = false)
 public abstract class transactionDatabase extends RoomDatabase {
 
     public abstract dataDAO dataDAO();
@@ -53,9 +53,9 @@ public abstract class transactionDatabase extends RoomDatabase {
                 dataDAO dao = INSTANCE.dataDAO();
                 dao.deleteAll();
 
-                description word = new description("Hello");
+                transactionEntity word = new transactionEntity("One fish two fish");
                 dao.insert(word);
-                word = new description("World");
+                word = new transactionEntity("red fish blue fish");
                 dao.insert(word);
             });
         }

@@ -20,7 +20,7 @@ public class descriptionsAdapter extends RecyclerView.Adapter<descriptionsAdapte
     }
 
     private final LayoutInflater mInflater;
-    private List<description> mDescriptions; // Cached copy of words
+    private List<transactionEntity> mTransactionEntities; // Cached copy of words
 
     descriptionsAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
@@ -34,8 +34,8 @@ public class descriptionsAdapter extends RecyclerView.Adapter<descriptionsAdapte
 
     @Override
     public void onBindViewHolder(descriptionsHolder holder, int position) {
-        if (mDescriptions != null) {
-            description current = mDescriptions.get(position);
+        if (mTransactionEntities != null) {
+            transactionEntity current = mTransactionEntities.get(position);
             holder.objectView.setText(current.getDescription());
         } else {
             // Covers the case of data not being ready yet.
@@ -43,8 +43,8 @@ public class descriptionsAdapter extends RecyclerView.Adapter<descriptionsAdapte
         }
     }
 
-    void setWords(List<description> words) {
-        mDescriptions = words;
+    void setWords(List<transactionEntity> words) {
+        mTransactionEntities = words;
         notifyDataSetChanged();
     }
 
@@ -52,8 +52,8 @@ public class descriptionsAdapter extends RecyclerView.Adapter<descriptionsAdapte
     // mWords has not been updated (means initially, it's null, and we can't return null).
     @Override
     public int getItemCount() {
-        if (mDescriptions != null)
-            return mDescriptions.size();
+        if (mTransactionEntities != null)
+            return mTransactionEntities.size();
         else return 0;
     }
 }

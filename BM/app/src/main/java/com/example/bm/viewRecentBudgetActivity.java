@@ -4,7 +4,6 @@ package com.example.bm;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -48,9 +47,9 @@ public class viewRecentBudgetActivity extends AppCompatActivity {
         // Mitchell
         // Observer for the LiveData, calls the onChanged() method when observed data changes
         dataViewModel = new ViewModelProvider(this).get(dataViewModel.class);
-        dataViewModel.getAllWords().observe(this, new Observer<List<description>>() {
+        dataViewModel.getAllWords().observe(this, new Observer<List<transactionEntity>>() {
             @Override
-            public void onChanged(@androidx.annotation.Nullable final List<description> words) {
+            public void onChanged(@androidx.annotation.Nullable final List<transactionEntity> words) {
                 adapter.setWords(words);
             }
         });
@@ -63,13 +62,15 @@ public class viewRecentBudgetActivity extends AppCompatActivity {
         Intent intent = new Intent (this, selectWhichViewPage.class);
         startActivity(intent);
     }
-
+/*
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == NEW_WORD_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            description word = new description(data.getStringExtra(incomeInputScreen.EXTRA_REPLY));
+            transactionEntity word = new transactionEntity(data.getStringExtra(incomeInputScreen.EXTRA_REPLY));
             dataViewModel.insert(word);
         }
     }
+
+ */
 }

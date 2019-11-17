@@ -14,19 +14,19 @@ public class dataViewModel extends AndroidViewModel {
     // - We can put an observer on the data (instead of polling for changes) and only update the
     //   the UI when the data actually changes.
     // - Repository is completely separated from the UI through the ViewModel.
-    private LiveData<List<description>> mAllDescriptions;
+    private LiveData<List<transactionEntity>> allTransactionObjects;
 
     public dataViewModel(Application application) {
         super(application);
         repositoryObject = new transactionRepository(application);
-        mAllDescriptions = repositoryObject.getAllWords();
+        allTransactionObjects = repositoryObject.getAllWords();
     }
 
-    LiveData<List<description>> getAllWords() {
-        return mAllDescriptions;
+    LiveData<List<transactionEntity>> getAllWords() {
+        return allTransactionObjects;
     }
 
-    void insert(description description) {
-        repositoryObject.insert(description);
+    void insert(transactionEntity transactionEntity) {
+        repositoryObject.insert(transactionEntity);
     }
 }

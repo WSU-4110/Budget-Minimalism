@@ -1,11 +1,8 @@
 package com.example.bm;
 
 import android.content.Intent;
-import android.inputmethodservice.ExtractEditText;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
-import android.view.inputmethod.ExtractedTextRequest;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -46,7 +43,9 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
         // Mitchell
         // This code enables the categories spinner on the expense input page
         Spinner spinner = findViewById(R.id.spinner); // create new spinner object
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.incomeCategoriesArray, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter =
+                ArrayAdapter.createFromResource(
+                    this, R.array.incomeCategoriesArray, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
@@ -59,10 +58,10 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
 
             @Override
             public void onClick(View v) {
-                String stringIN = DescriptionBox.getText().toString();
-                if(!stringIN.equals("")) {
-                    description newDataBaseItem = new description(stringIN);
-                    dataViewModel.insert(newDataBaseItem);
+                String words = DescriptionBox.getText().toString();
+                if(!words.equals("")) {
+                    transactionEntity newTransaction = new transactionEntity(words);
+                    dataViewModel.insert(newTransaction);
                     returnToMainMenuPlease();
                 } else {
                     toastMessage("Nothing to submit");
