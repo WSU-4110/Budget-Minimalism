@@ -64,7 +64,7 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
                     dataViewModel.insert(newTransaction);
                     returnToMainMenuPlease();
                 } else {
-                    toastMessage("Nothing to submit");
+                    toastMessage("Please fill in all fields");
                 }
             }
         });
@@ -80,8 +80,7 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
         startActivity(intent);
     }
 
-    // Mitchell
-    // This code is so that the item tapped from the dropdown menu is actually selected
+    // Used to want a toast message on category selection but its just annoying now
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         //String text = parent.getItemAtPosition(position).toString();

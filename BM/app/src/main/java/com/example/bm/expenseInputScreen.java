@@ -61,7 +61,7 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
                     dataViewModel2.insert(newTransaction2);
                     returnToMainMenuPlease();
                 } else {
-                    toastMessage("Nothing to submit");
+                    toastMessage("Please fill in all fields");
                 }
             }
         });
@@ -79,11 +79,11 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
         startActivity(intent);
     }
 
-    // This function allows the categories from the spinner to be selected and appear onscreen
+    // Used to want a toast message on category selection but its just annoying now
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String text = parent.getItemAtPosition(position).toString();
-        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+        //String text = parent.getItemAtPosition(position).toString();
+        ///oast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
 
     }
 
