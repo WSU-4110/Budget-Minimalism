@@ -15,7 +15,7 @@ public class selectWhichViewPage extends AppCompatActivity {
     private Button viewRecent;
     private Button viewPercent;
     private FloatingActionButton back;
-    private Button developerInfo;
+
 
 
     @Override
@@ -43,11 +43,7 @@ public class selectWhichViewPage extends AppCompatActivity {
             public void onClick(View v) { returnToMainMenuPlease(); }
         });
 
-        developerInfo = (Button) findViewById(R.id.developerInfo);
-        developerInfo.setOnClickListener((new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {sendToDeveloperInfoPage(); }
-        }));
+
     }
 
     public void openViewRecentPage() {
@@ -66,10 +62,7 @@ public class selectWhichViewPage extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void sendToDeveloperInfoPage() {
-        Intent intent = new Intent(this, developerInfoPage.class);
-        startActivity(intent);
-    }
+
 
 
 }

@@ -15,6 +15,7 @@ public class settingsPage extends AppCompatActivity {
     private Button SetIncomeCategories;
     private Button setExpenseCategories;
     private FloatingActionButton back; //this object is for the back button
+    private Button developerInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,12 @@ public class settingsPage extends AppCompatActivity {
                 returnToMainMenuPlease();
             }
         });
+
+        developerInfo = (Button) findViewById(R.id.DeveloperInfo);
+        developerInfo.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {sendToDeveloperInfoPage(); }
+        }));
     }
 
     // This function ebables the "Set Income Categories" button
@@ -64,6 +71,11 @@ public class settingsPage extends AppCompatActivity {
     // but those classes are not static, and I'm not instantiating them so no dice.
     public void returnToMainMenuPlease() {
         Intent intent = new Intent (this, homePageActivity.class);
+        startActivity(intent);
+    }
+
+    public void sendToDeveloperInfoPage() {
+        Intent intent = new Intent(this, developerInfoPage.class);
         startActivity(intent);
     }
 }
