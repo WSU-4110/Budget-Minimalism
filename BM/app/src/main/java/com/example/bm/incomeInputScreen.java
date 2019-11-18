@@ -20,13 +20,12 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
     private EditText DescriptionBox;
     private Button submitButton;
     private dataViewModel dataViewModel;
-    public static final String EXTRA_REPLY = "com.example.android.wordlistsql.REPLY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_income_inputscreen);
-        dataViewModel = new ViewModelProvider(this).get(dataViewModel.class);
+
 
         // Mitchell:
         // This code connects the xml back button and the java object
@@ -54,6 +53,7 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
         // getting user input to work finally
         DescriptionBox = findViewById(R.id.incomeDescript);
         submitButton = (Button) findViewById(R.id.incomeSubmit);
+        dataViewModel = new ViewModelProvider(this).get(dataViewModel.class);
         submitButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -69,6 +69,9 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
             }
         });
     } // end onCreate
+
+
+
 
 
     // This function simply sends the user back to the main menu activity

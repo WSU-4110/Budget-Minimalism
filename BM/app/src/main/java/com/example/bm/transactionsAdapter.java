@@ -8,7 +8,7 @@ import android.widget.TextView;
 import java.util.List;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class descriptionsAdapter extends RecyclerView.Adapter<descriptionsAdapter.descriptionsHolder> {
+public class transactionsAdapter extends RecyclerView.Adapter<transactionsAdapter.descriptionsHolder> {
 
     class descriptionsHolder extends RecyclerView.ViewHolder {
         private final TextView objectView;
@@ -22,7 +22,7 @@ public class descriptionsAdapter extends RecyclerView.Adapter<descriptionsAdapte
     private final LayoutInflater mInflater;
     private List<transactionEntity> mTransactionEntities; // Cached copy of words
 
-    descriptionsAdapter(Context context) {
+    transactionsAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
     }
 

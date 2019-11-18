@@ -29,8 +29,9 @@ public class viewRecentBudgetActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_recent_budget_activity);
 
         // Mitchell
+        // This code sets up the recycler view to return database information
         RecyclerView recyclerView = findViewById(R.id.recview);
-        final descriptionsAdapter adapter = new descriptionsAdapter(this);
+        final transactionsAdapter adapter = new transactionsAdapter(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

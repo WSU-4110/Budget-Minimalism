@@ -5,11 +5,13 @@
 
     <!-- Mitchell
     Must be @style/databaseReturn -->
+
     <TextView
         android:id="@+id/textView"
         style="@style/databaseReturn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_orange_light" />
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
 </LinearLayout>
