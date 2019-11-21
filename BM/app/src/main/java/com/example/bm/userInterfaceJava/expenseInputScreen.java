@@ -17,10 +17,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class expenseInputScreen extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    private dataViewModel dataViewModel2;
     private FloatingActionButton back;   //create object for back button
     private EditText DescriptionBox;
     private Button submitButton;
-    private dataViewModel dataViewModel2;
+    private EditText amountEditText;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,13 +54,18 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
         DescriptionBox = findViewById(R.id.editText);
         submitButton = (Button) findViewById(R.id.expenseSubmit);
         dataViewModel2 = new ViewModelProvider(this).get(dataViewModel.class);
+        amountEditText = findViewById(R.id.editText2);
+
+
         submitButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                String words = DescriptionBox.getText().toString();
-                if (!words.equals("")) {
-                    transactionEntity newTransaction2 = new transactionEntity(words);
+                String description = DescriptionBox.getText().toString();
+                String amount = amountEditText.getText().toString();
+                String sendIt ="- "+amount+" "+description+ " on "+date;
+                if (!sendIt.equals("")) {
+                    transactionEntity newTransaction2 = new transactionEntity(sendIt);
                     dataViewModel2.insert(newTransaction2);
                     returnToMainMenuPlease();
                 } else {
@@ -70,7 +78,9 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
 
 
 
-
+    // Mitchell Fenner
+    // setting up a date object
+    java.util.Date date = new java.util.Date();
 
     // Mitchell
     // Function which returns user to main menu from the expense input screen

@@ -53,12 +53,11 @@ public abstract class transactionDatabase extends RoomDatabase {
                 dataDAO dao = INSTANCE.dataDAO();
                 dao.deleteAll();
 
-                /*
-                transactionEntity word = new transactionEntity("One fish two fish");
-                dao.insert(word);
-                word = new transactionEntity("red fish blue fish");
-                dao.insert(word);
-                */
+
+                //transactionEntity word = new transactionEntity("testing purposes");
+                //dao.insert(word);
+
+
             });
         }
     };
