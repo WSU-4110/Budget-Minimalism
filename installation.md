@@ -1,7 +1,7 @@
 ### Requirements (Android Studio Virtualization)
  - CPU which supports either [VT-x or AMD-V](https://en.wikipedia.org/wiki/X86_virtualization)
  	-  Note for Ryzen CPU users: As of 10/31/2019 current Windows drivers do not support Android virtualization, the only way to run the app on a Ryzen series CPU at this time is to use Android Studio for Linux.
- - At least 8gb of RAM, 16gb preffered 
+ - At least 8gb of RAM, 16gb prefered 
  
  
  ### Installation instructions
