@@ -11,4 +11,5 @@
  - Clone the repository to `C:\Users\<username>\AndroidStudioProjects`  
  - Open the directory `Budget-Minimalism/BM` in Android Studio.
  - Click `Files` then `Sync Project With Gradle Files`
- - Click the green hammer to make the project, then the green play button to install and run.
+ - Click `Build` then `Make Project`
+ - Finally click `Run` then `Run app`
