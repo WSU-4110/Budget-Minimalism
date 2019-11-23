@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 
 public class developerInfoPage extends AppCompatActivity {
 
@@ -16,13 +18,29 @@ public class developerInfoPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+       // View developerpage= new developerInfoPage()
+                //.addYoutube("f");
+
+
+
         setContentView(R.layout.activity_developer_info_page);
 
         back = (FloatingActionButton) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { returnToMainMenuPlease(); }
+            public void onClick(View v) { returnToMainMenuPlease();
+            }
+
+
+
+
         });
+
+
+
+
     } // end onCreate
 
 

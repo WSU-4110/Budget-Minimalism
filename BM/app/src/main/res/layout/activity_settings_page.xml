@@ -22,7 +22,7 @@
         android:id="@+id/textView"
         android:layout_width="183dp"
         android:layout_height="75dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="65dp"
         android:text="Settings"
         android:textSize="@android:dimen/app_icon_size"
         android:textStyle="bold"
@@ -38,10 +38,8 @@
         android:layout_width="149dp"
         android:layout_height="80dp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
         android:background="#6cff66"
         android:text="Set Income Categories"
@@ -49,19 +47,18 @@
         android:textColor="#6e6e6e"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.331" />
+        app:layout_constraintVertical_bias="0.294" />
 
     <Button
         android:id="@+id/setExpenseCategories"
         android:layout_width="144dp"
         android:layout_height="81dp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
         android:background="#6cff66"
         android:text="Set Expense Categories"
@@ -69,19 +66,18 @@
         android:textColor="#6e6e6e"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.605" />
+        app:layout_constraintVertical_bias="0.538" />
 
     <Button
         android:id="@+id/DeveloperInfo"
         android:layout_width="140dp"
         android:layout_height="79dp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
         android:background="#6cff66"
         android:text="Developer Info"
@@ -89,7 +85,24 @@
         android:textColor="#6e6e6e"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.878" />
+        app:layout_constraintVertical_bias="0.779" />
+
+    <Button
+        android:id="@+id/signout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="169dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="169dp"
+        android:layout_marginBottom="65dp"
+        android:background="#6cff66"
+        android:text="SIGN OUT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DeveloperInfo"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
