@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -16,6 +17,7 @@ public class settingsPage extends AppCompatActivity {
     private Button setExpenseCategories;
     private FloatingActionButton back; //this object is for the back button
     private Button developerInfo;
+    Button logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,18 @@ public class settingsPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {sendToDeveloperInfoPage(); }
         }));
+        logout= findViewById(R.id.signout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentn=new Intent(settingsPage.this,mainActivity.class);
+                startActivity(intentn);
+                finish();
+                Toast.makeText(settingsPage.this,"Successfully Logout",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
     }
 
     // This function ebables the "Set Income Categories" button
@@ -78,4 +92,7 @@ public class settingsPage extends AppCompatActivity {
         Intent intent = new Intent(this, developerInfoPage.class);
         startActivity(intent);
     }
+
+
+
 }
