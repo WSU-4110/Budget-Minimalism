@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/back"
     tools:context=".userInterfaceJava.view_spending_delta">
 
     <TextView
@@ -12,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="372dp"
         android:layout_marginBottom="243dp"
-        android:background="#6cff66"
+        android:background="#FF8FDBF1"
         android:clickable="true"
         android:inputType="number"
         android:text="@string/BudgetProgress"
@@ -49,7 +52,7 @@
         android:layout_marginTop="409dp"
         android:layout_marginEnd="13dp"
         android:layout_marginBottom="119dp"
-        android:indeterminateBehavior="repeat"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.39"
@@ -65,7 +68,9 @@
         android:layout_marginTop="548dp"
         android:layout_marginEnd="136dp"
         android:layout_marginBottom="44dp"
+        android:background="@drawable/button"
         android:text="Update"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.764"

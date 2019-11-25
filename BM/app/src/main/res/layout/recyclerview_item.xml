@@ -3,6 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+
     <!-- Mitchell
     Must be @style/databaseReturn -->
 
@@ -11,7 +12,7 @@
         style="@style/databaseReturn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:background="#82B1FF"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="14sp" />
 
