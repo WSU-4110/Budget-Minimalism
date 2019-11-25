@@ -55,13 +55,20 @@ public class settingsPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {sendToDeveloperInfoPage(); }
         }));
+
+
+        //Nahidul
+        // finds and initializes the logout button
         logout= findViewById(R.id.signout);
+
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //creates an intent object to go to that particular page.
                 Intent intentn=new Intent(settingsPage.this,mainActivity.class);
                 startActivity(intentn);
                 finish();
+                // signout message after going to that particular page
                 Toast.makeText(settingsPage.this,"Successfully Logout",Toast.LENGTH_SHORT).show();
             }
         });

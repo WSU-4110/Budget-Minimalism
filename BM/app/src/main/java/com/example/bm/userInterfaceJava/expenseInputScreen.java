@@ -1,10 +1,15 @@
 package com.example.bm;
 
+
+
+
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,6 +19,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class expenseInputScreen extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -22,6 +29,15 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
     private EditText DescriptionBox;
     private Button submitButton;
     private EditText amountEditText;
+
+
+
+    EditText editTextdescription;
+    EditText editTextprice;
+    Spinner spinner12;
+    Button buttonsubmit;
+    DatabaseReference databaseTransection;
+
 
 
 
@@ -74,7 +90,48 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
             }
         });
 
+        editTextdescription=(EditText)findViewById(R.id.editText);
+        editTextprice=(EditText)findViewById(R.id.editText2);
+        spinner12=(Spinner)findViewById(R.id.spinner4);
+
+        buttonsubmit=(Button)findViewById(R.id.expenseSubmit);
+        databaseTransection= FirebaseDatabase.getInstance().getReference("transection");
+
+
+        buttonsubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addTransection();
+
+            }
+        });
+
+
+
     } // end onCreate
+
+    private void addTransection(){
+
+        String transectiondescription=editTextdescription.getText().toString().trim();
+        String transectionprice=editTextprice.getText().toString().trim();
+        String transectioncategory=spinner12.getSelectedItem().toString();
+        if(!TextUtils.isEmpty(transectionprice)){
+            String id=databaseTransection.push().getKey();
+
+            transection transection1=new transection (id,transectiondescription,transectionprice,transectioncategory);
+
+            databaseTransection.child(id).setValue(transection1);
+
+
+
+
+
+
+        }else {
+            Toast.makeText(this, "Enter the price ", Toast.LENGTH_LONG).show();
+
+        }
+    }
 
 
 
