@@ -35,20 +35,41 @@
         tools:itemCount="13" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/totalAmt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="113dp"
-        android:layout_marginEnd="270dp"
-        android:layout_marginBottom="19dp"
-        android:background="#FF8FDBF1"
-        android:text="Amount       Description       Date"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="344dp"
+        android:layout_marginBottom="102dp"
+        android:background="#E1E9EE"
+        android:text="Total Expense: "
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/recview"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/totalAmtid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="344dp"
+        android:layout_marginBottom="102dp"
+        android:background="#E1E9EE"
+        android:text="totalexpense"
+        android:textSize="20dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/recview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/totalAmt"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.166" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
