@@ -43,6 +43,8 @@ public class mainActivity extends AppCompatActivity {
         Login = (Button) findViewById(R.id.btnLogin);
         userSignup = (TextView) findViewById(R.id.tvsignup);
 
+
+
         //Info.setText("No Of attempts remaining: 5");
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
@@ -54,7 +56,29 @@ public class mainActivity extends AppCompatActivity {
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //assigns the text field for the email
+                EditText usernameEditText = (EditText) findViewById(R.id.uname);
+                String sUsername = usernameEditText.getText().toString();
+                //checks if the email is empty
+                if (sUsername.matches("")) {
+                    //if the email is empty, outputs a message
+                    Toast.makeText(mainActivity.this, "Please enter in an Email to SIGN IN ", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                //assigns the pass word
+                EditText passwordEditText2 = (EditText) findViewById(R.id.pass);
+                String sUsernpass = passwordEditText2.getText().toString();
+                //checks for the password if its empty
+                if (sUsernpass.matches("")) {
+
+                    //prints out message of the user did not enter in a password
+                    Toast.makeText(mainActivity.this, "Please enter in a Password to SIGN IN", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 validate(Email.getText().toString(),Password.getText().toString());
+
 
             }
         });
