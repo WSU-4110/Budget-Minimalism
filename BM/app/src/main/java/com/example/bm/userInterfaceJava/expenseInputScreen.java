@@ -30,7 +30,7 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
     private Button submitButton;
     private EditText amountEditText;
 
-
+//commit test
 
     EditText editTextdescription;
     EditText editTextprice;
@@ -142,7 +142,7 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
     // Mitchell
     // Function which returns user to main menu from the expense input screen
     public void returnToMainMenuPlease() {
-        Intent intent = new Intent (this, homePageActivity.class);
+        Intent intent = new Intent (this, com.example.bm.homePageActivity.class);
         startActivity(intent);
     }
 
