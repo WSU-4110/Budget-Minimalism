@@ -73,6 +73,11 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.archLifecycleVersion"
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$rootProject.archLifecycleVersion"
 
+    //Mohammed Rahin Unit testing
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'androidx.test:core:1.0.0'
+    testImplementation 'org.mockito:mockito-all:1.10.19'
+
     // UI
     //implementation "com.google.android.material:material:$rootProject.materialVersion"
 

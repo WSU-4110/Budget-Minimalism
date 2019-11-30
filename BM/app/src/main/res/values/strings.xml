@@ -37,6 +37,12 @@
     <string name="signin">Sign in</string>
     <string name="email">Email</string>
     <string name="signupprompt">Don\'t Have an Account? SIGN UP</string>
+    <string name="useremail_error">1</string>
+    <string name="password_error">0</string>
+    <string name="login_failed">1</string>
+    <string name="resID">1</string>
+    <string name="userpass_error">1</string>
+    <string name="tvsignup">1</string>
 
     <!-- Below is a string array which hardcodes the expense categories -->
     <string-array name="expenseCategoriesArray">

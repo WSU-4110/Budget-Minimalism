@@ -12,13 +12,15 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.bm.userInterfaceJava.LoginPresenter;
+import com.example.bm.userInterfaceJava.LoginView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class mainActivity extends AppCompatActivity {
+public class mainActivity extends AppCompatActivity implements LoginView {
 
     //Mohammed
     private EditText Email;
@@ -30,6 +32,7 @@ public class mainActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
+    private LoginPresenter presenter;
 
 
     @Override
@@ -39,16 +42,14 @@ public class mainActivity extends AppCompatActivity {
 
         Email = (EditText)findViewById(R.id.uname);
         Password = (EditText)findViewById(R.id.pass);
-        //Info = (TextView)findViewById(R.id.btnInfo);
         Login = (Button) findViewById(R.id.btnLogin);
         userSignup = (TextView) findViewById(R.id.tvsignup);
 
+        //Mohammed Rahin Unit testing
+        presenter = new LoginPresenter(this, new com.example.bm.homePageActivity());
 
-
-        //Info.setText("No Of attempts remaining: 5");
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
-
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
         //Mohammed
@@ -56,30 +57,31 @@ public class mainActivity extends AppCompatActivity {
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Mohammed Rahin Unit test
+                presenter.onClick();
 
                 //assigns the text field for the email
-                EditText usernameEditText = (EditText) findViewById(R.id.uname);
-                String sUsername = usernameEditText.getText().toString();
+//                EditText userEmailEditText = (EditText) findViewById(R.id.uname);
+//                String sUserEmail = userEmailEditText.getText().toString();
                 //checks if the email is empty
-                if (sUsername.matches("")) {
-                    //if the email is empty, outputs a message
-                    Toast.makeText(mainActivity.this, "Please enter in an Email to SIGN IN ", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                //assigns the pass word
-                EditText passwordEditText2 = (EditText) findViewById(R.id.pass);
-                String sUsernpass = passwordEditText2.getText().toString();
-                //checks for the password if its empty
-                if (sUsernpass.matches("")) {
-
-                    //prints out message of the user did not enter in a password
-                    Toast.makeText(mainActivity.this, "Please enter in a Password to SIGN IN", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                validate(Email.getText().toString(),Password.getText().toString());
-
-
+//                if (sUserEmail.isEmpty()) {
+//                    //if the email is empty, outputs a message
+//                    //Toast.makeText(mainActivity.this, "Please enter in an Email to SIGN IN ", Toast.LENGTH_SHORT).show();
+//                    userEmailEditText.setError("Please Enter a Valid Email");
+//                    return;
+//                }
+//
+//                //assigns the pass word
+//                EditText passwordEditText2 = (EditText) findViewById(R.id.pass);
+//                String sUserpass = passwordEditText2.getText().toString();
+//                //checks for the password if its empty
+//                if (sUserpass.isEmpty()) {
+//                    //prints out message of the user did not enter in a password
+//                    //Toast.makeText(mainActivity.this, "Please enter in a Password to SIGN IN", Toast.LENGTH_SHORT).show();
+//                    passwordEditText2.setError("Please Enter a Valid Password");
+//                    return;
+//                }
+                //validate(Email.getText().toString(),Password.getText().toString());
             }
         });
 
@@ -88,16 +90,12 @@ public class mainActivity extends AppCompatActivity {
         userSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(mainActivity.this, signUpActivity.class));
+                startActivity(new Intent(mainActivity.this, com.example.bm.signUpActivity.class));
             }
         });
     }
 
     private void validate (String userEmail, String userPassword){
-
-        progressDialog.setMessage("Progressing!!!");
-        progressDialog.show();
-        progressDialog.dismiss();
 
         firebaseAuth.signInWithEmailAndPassword(userEmail,userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -105,7 +103,7 @@ public class mainActivity extends AppCompatActivity {
                 if (t.isSuccessful()){
                     progressDialog.dismiss();
                     Toast.makeText(mainActivity.this,"Login Successfull" ,Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(mainActivity.this, homePageActivity.class));
+                    startActivity(new Intent(mainActivity.this, com.example.bm.homePageActivity.class));
                 }else{
                     Toast.makeText(mainActivity.this,"Log in failed",Toast.LENGTH_SHORT).show();
                     progressDialog.dismiss();
@@ -113,4 +111,42 @@ public class mainActivity extends AppCompatActivity {
                 }
             }
         });
-    }}
+    }
+
+    @Override
+    public String getUserEmail() {
+        return Email.getText().toString();
+    }
+
+    @Override
+    public void showUserEmailError(int resID) {
+        Email.setError(getString(resID));
+    }
+
+    @Override
+    public String getUserPass() {
+        return Password.getText().toString();
+    }
+
+    @Override
+    public void showUserPassError(int resID) {
+        Password.setError(getString(resID));
+    }
+
+    @Override
+    public void startHomePageAvtivity() {
+        new Intent(mainActivity.this, com.example.bm.homePageActivity.class);
+    }
+
+    @Override
+    public void showLoginError(int resID) {
+        Toast.makeText(mainActivity.this,getString(resID),Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void signUpActivity() {
+        startActivity(new Intent(mainActivity.this, com.example.bm.signUpActivity.class));
+    }
+
+
+}

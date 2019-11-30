@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
-public class homePageActivity extends AppCompatActivity {
+public class homePageActivity extends AppCompatActivity   {
     // Object name declarations
     private Button button2;         //Main menu "Expense" button object
     private Button incomeButton;    //Main menu "Income" button object
@@ -72,27 +72,33 @@ public class homePageActivity extends AppCompatActivity {
     }
     // Mitchell wrote this function
     public void openActivity_expense_inputscreen() {
-        Intent intent = new Intent(this, expenseInputScreen.class);
+        Intent intent = new Intent(this, com.example.bm.expenseInputScreen.class);
         startActivity(intent);
     }
 
     // Mitchell
     public void openActivity_income_inputscreen() {
-        Intent intent = new Intent(this, incomeInputScreen.class);
+        Intent intent = new Intent(this, com.example.bm.incomeInputScreen.class);
         startActivity(intent);
     }
 
     // Mitchell
     public void sendYoutoSettingsPage() {
-        Intent intent = new Intent (this, settingsPage.class);
+        Intent intent = new Intent (this, com.example.bm.settingsPage.class);
         startActivity(intent);
     }
 
     // This function sends you to the view_recent_budget_activity
     public void sendYouToViewRecent() {
-        Intent intent = new Intent (this, selectWhichViewPage.class);
+        Intent intent = new Intent (this, com.example.bm.selectWhichViewPage.class);
         startActivity(intent);
     }
+
+    public boolean login(String userEmail, String password) {
+        return "done12@gmail.com".equals(userEmail) && "done12".equals(password);
+
+    }
+
 /**
     // Android Studio default code
     @Override
