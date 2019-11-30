@@ -32,7 +32,7 @@ public class expenseinput extends AppCompatActivity {
         spinner12=(Spinner)findViewById(R.id.spinner4);
 
         buttonsubmit=(Button)findViewById(R.id.expenseSubmit);
-        databaseTransection= FirebaseDatabase.getInstance().getReference("transection");
+        databaseTransection= FirebaseDatabase.getInstance().getReference("transaction");
 
 
         buttonsubmit.setOnClickListener(new View.OnClickListener() {
@@ -60,9 +60,9 @@ public class expenseinput extends AppCompatActivity {
         if(!TextUtils.isEmpty(transectionprice)){
             String id=databaseTransection.push().getKey();
 
-            transection transection1=new transection (id,transectiondescription,transectionprice,transectioncategory);
+            transaction transaction1 =new transaction(id,transectiondescription,transectionprice,transectioncategory);
 
-            databaseTransection.setValue(transection1);
+            databaseTransection.setValue(transaction1);
 
 
 

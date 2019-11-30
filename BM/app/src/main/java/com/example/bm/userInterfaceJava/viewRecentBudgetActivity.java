@@ -43,9 +43,9 @@ public class viewRecentBudgetActivity extends AppCompatActivity {
 
         mTotal = (TextView)findViewById(R.id.totalAmtid);
         // creates a referance to the child or the root of the database which
-        // i have saved up as transection because it saves any expense transection
+        // i have saved up as transaction because it saves any expense transaction
 
-        mDatabase= FirebaseDatabase.getInstance().getReference().child("transection");
+        mDatabase= FirebaseDatabase.getInstance().getReference().child("transaction");
 
         //creates an event listener which finds all the prices and sums them up
         mDatabase.addValueEventListener(new ValueEventListener() {

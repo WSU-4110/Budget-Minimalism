@@ -95,7 +95,7 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
         spinner12=(Spinner)findViewById(R.id.spinner4);
 
         buttonsubmit=(Button)findViewById(R.id.expenseSubmit);
-        databaseTransection= FirebaseDatabase.getInstance().getReference("transection");
+        databaseTransection= FirebaseDatabase.getInstance().getReference("transaction");
 
 
         buttonsubmit.setOnClickListener(new View.OnClickListener() {
@@ -118,9 +118,9 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
         if(!TextUtils.isEmpty(transectionprice)){
             String id=databaseTransection.push().getKey();
 
-            transection transection1=new transection (id,transectiondescription,transectionprice,transectioncategory);
+            transaction transaction1 =new transaction(id,transectiondescription,transectionprice,transectioncategory);
 
-            databaseTransection.child(id).setValue(transection1);
+            databaseTransection.child(id).setValue(transaction1);
 
 
 
