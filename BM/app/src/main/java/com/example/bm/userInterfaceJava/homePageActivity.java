@@ -8,10 +8,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.bm.userInterfaceJava.pricecheck;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
-public class homePageActivity extends AppCompatActivity {
+public class homePageActivity extends AppCompatActivity implements pricecheck {
     // Object name declarations
     private Button button2;         //Main menu "Expense" button object
     private Button incomeButton;    //Main menu "Income" button object
@@ -93,7 +94,18 @@ public class homePageActivity extends AppCompatActivity {
         Intent intent = new Intent (this, selectWhichViewPage.class);
         startActivity(intent);
     }
-/**
+
+    @Override
+    public String getprice() {
+        return "5";
+    }
+    @Override
+    public  void expenseInputScreen(){
+        Intent intent = new Intent(homePageActivity.this, expenseInputScreen.class);
+        startActivity(intent);
+    }
+
+    /**
     // Android Studio default code
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -118,4 +130,8 @@ public class homePageActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 **/
+
+
+
+
 }
