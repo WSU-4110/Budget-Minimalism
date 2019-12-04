@@ -10,7 +10,7 @@
 ### For documentation checkout the [wiki](https://github.com/WSU-4110/Budget-Minimalism/wiki)
 
 ### Screens
-![Screen4](https://github.com/WSU-4110/Budget-Minimalism/blob/master/screenshots/loginScreen.png "loginPage") ![Screen1](https://github.com/WSU-4110/Budget-Minimalism/blob/master/screenshots/mainMenu.png "MainMenu  ")
+![Screen4](https://github.com/WSU-4110/Budget-Minimalism/blob/master/screenshots/loginScreen.PNG "loginPage") ![Screen1](https://github.com/WSU-4110/Budget-Minimalism/blob/master/screenshots/mainMenu.png "MainMenu  ")
 
 ![Screen2](https://github.com/WSU-4110/Budget-Minimalism/blob/master/screenshots/expenseinput.png "ExpenseInput") ![Screen3](https://github.com/WSU-4110/Budget-Minimalism/blob/master/screenshots/settingspage.png "ViewPage") 
 
