@@ -20,12 +20,11 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class mainActivity extends AppCompatActivity {
 
-    //Mohammed
+    //Mohammed Rahin
     private EditText Email;
     private EditText Password;
     private TextView Info;
     private Button Login;
-    //private int counter = 5;
     private TextView userSignup;
 
     private FirebaseAuth firebaseAuth;
@@ -39,19 +38,16 @@ public class mainActivity extends AppCompatActivity {
 
         Email = (EditText)findViewById(R.id.uname);
         Password = (EditText)findViewById(R.id.pass);
-        //Info = (TextView)findViewById(R.id.btnInfo);
         Login = (Button) findViewById(R.id.btnLogin);
         userSignup = (TextView) findViewById(R.id.tvsignup);
 
-
-
-        //Info.setText("No Of attempts remaining: 5");
+        //Database helper
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
 
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
-        //Mohammed
+        //Mohammed Rahin
         //After click on Sign In button it will validate the user email and pass
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,18 +79,19 @@ public class mainActivity extends AppCompatActivity {
             }
         });
 
-        //Mohamed
+        //Mohammed Rahin
         //After click on Sign In button it will validate the user email and pass
         userSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(mainActivity.this, signUpActivity.class));
+                startActivity(new Intent(mainActivity.this, com.example.bm.signUpActivity.class));
             }
         });
     }
 
     private void validate (String userEmail, String userPassword){
 
+        //Mohammed Rahin
         progressDialog.setMessage("Progressing!!!");
         progressDialog.show();
         progressDialog.dismiss();
@@ -105,7 +102,7 @@ public class mainActivity extends AppCompatActivity {
                 if (t.isSuccessful()){
                     progressDialog.dismiss();
                     Toast.makeText(mainActivity.this,"Login Successfull" ,Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(mainActivity.this, homePageActivity.class));
+                    startActivity(new Intent(mainActivity.this, com.example.bm.homePageActivity.class));
                 }else{
                     Toast.makeText(mainActivity.this,"Log in failed",Toast.LENGTH_SHORT).show();
                     progressDialog.dismiss();
