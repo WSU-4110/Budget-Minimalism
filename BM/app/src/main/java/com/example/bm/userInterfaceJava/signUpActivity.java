@@ -20,22 +20,23 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class signUpActivity extends AppCompatActivity {
 
+    //Mohammed Rahin
     private EditText userName, userPassword, userEmail;
     private Button regButton;
     private TextView userLognin;
-    //from firebase
+    //Database helper
     private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        //Mohammed
+        //Mohammed Rahin
+        //this will set up the UI Views
         setupUIViews();
 
-        //Mohammed
-
-
+        //Mohammed Rahin
+        //Database helper
         firebaseAuth = FirebaseAuth.getInstance();
 
         regButton.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +53,7 @@ public class signUpActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 Toast.makeText(signUpActivity.this, "Registration successfull", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(signUpActivity.this, mainActivity.class));
+                                startActivity(new Intent(signUpActivity.this, com.example.bm.mainActivity.class));
                             }else{
                                 Toast.makeText(signUpActivity.this, "Registration failed", Toast.LENGTH_SHORT).show();
 
@@ -64,17 +65,19 @@ public class signUpActivity extends AppCompatActivity {
                 }
             }
         });
-        //Mohammed
+        //Mohammed Rahin
+        //once the user click on Sign in it will take them to Home Page Activity
         userLognin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(signUpActivity.this, mainActivity.class));
+                startActivity(new Intent(signUpActivity.this, com.example.bm.mainActivity.class));
             }
         });
 
     }
 
-    //Mohammed
+    //Mohammed Rahin
+    //This is a sign up page
     private void setupUIViews(){
         userName = (EditText)findViewById (R.id.etUserName);
         userPassword = (EditText)findViewById (R.id.etUserPassword);
