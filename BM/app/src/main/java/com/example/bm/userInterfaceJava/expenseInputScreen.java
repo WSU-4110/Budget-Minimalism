@@ -90,17 +90,20 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
             }
         });
 
+        //Nahidul
         editTextdescription=(EditText)findViewById(R.id.editText);
         editTextprice=(EditText)findViewById(R.id.editText2);
         spinner12=(Spinner)findViewById(R.id.spinner4);
 
         buttonsubmit=(Button)findViewById(R.id.expenseSubmit);
+        //creates database reference
         databaseTransection= FirebaseDatabase.getInstance().getReference("transection");
 
-
+        //once the user fills out the axpense information and hits submit, this method gets called
         buttonsubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //calls the function that adds the transection to the database.
                 addTransection();
 
             }
@@ -115,21 +118,24 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
         String transectiondescription=editTextdescription.getText().toString().trim();
         String transectionprice=editTextprice.getText().toString().trim();
         String transectioncategory=spinner12.getSelectedItem().toString();
+
+        // checks if the user has entered the price for the expense
         if(!TextUtils.isEmpty(transectionprice)){
             String id=databaseTransection.push().getKey();
 
+            // call the transection method with the user information
             transection transection1=new transection (id,transectiondescription,transectionprice,transectioncategory);
-
+            // sets the value with unique id that is automatically created.
             databaseTransection.child(id).setValue(transection1);
+
+            // sends the user back to home page after adding an expense
             Intent intent = new Intent (this, com.example.bm.homePageActivity.class);
             startActivity(intent);
 
 
-
-
-
-
         }else {
+            // if the user doesn't enters the price, the message gets outputted.
+
             Toast.makeText(this, "Enter the price ", Toast.LENGTH_LONG).show();
 
         }
