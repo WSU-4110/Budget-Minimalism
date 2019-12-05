@@ -121,6 +121,8 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
             transection transection1=new transection (id,transectiondescription,transectionprice,transectioncategory);
 
             databaseTransection.child(id).setValue(transection1);
+            Intent intent = new Intent (this, com.example.bm.homePageActivity.class);
+            startActivity(intent);
 
 
 
