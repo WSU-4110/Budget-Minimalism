@@ -36,6 +36,8 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
         // the button calls the returnToMainMenuPlease()
         back = (FloatingActionButton) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
+            //returns to main menu
+
             @Override
             public void onClick(View v) {
                 returnToMainMenuPlease();
@@ -65,10 +67,13 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
             public void onClick(View v) {
                 String description = DescriptionBox.getText().toString();
                 String amount = amountEditText.getText().toString();
+                // this string is an amalgamation of the other string objects
                 String sendIt ="+ "+amount+" "+description+ " on "+date;
 
+                // if both fields not filled, you cannot continue.
                 if(!description.equals("") && !amount.equals("")) {
                     transactionEntity newTransaction = new transactionEntity(sendIt);
+                    // insert new transaction object view our database object
                     dataViewModel.insert(newTransaction);
                     returnToMainMenuPlease();
                 } else {
