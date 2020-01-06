@@ -9,6 +9,7 @@ import java.util.List;
 
 public class dataViewModel extends AndroidViewModel {
 
+
     private transactionRepository repositoryObject;
     // Using LiveData and caching what getAlphabetizedWords returns has several benefits:
     // - We can put an observer on the data (instead of polling for changes) and only update the
