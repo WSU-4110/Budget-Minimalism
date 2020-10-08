@@ -7,6 +7,8 @@
 
 ### For installation instructions see [installation.md](https://github.com/WSU-4110/Budget-Minimalism/blob/master/installation.md)
 
+You can report any issues with the software at: https://github.com/WSU-4110/Budget-Minimalism/issues
+
 ### For documentation checkout the [wiki](https://github.com/WSU-4110/Budget-Minimalism/wiki)
 
 ### Screens
