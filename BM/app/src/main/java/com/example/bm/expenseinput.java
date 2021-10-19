@@ -60,7 +60,7 @@ public class expenseinput extends AppCompatActivity {
         if(!TextUtils.isEmpty(transectionprice)){
             String id=databaseTransection.push().getKey();
 
-            transection transection1=new transection (id,transectiondescription,transectionprice,transectioncategory);
+            transaction transection1=new transaction (id,transectiondescription,transectionprice,transectioncategory);
 
             databaseTransection.setValue(transection1);
 
