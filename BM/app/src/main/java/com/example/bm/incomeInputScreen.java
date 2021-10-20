@@ -15,6 +15,8 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+
+//this class takes input from user for recording income
 public class incomeInputScreen extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private dataViewModel dataViewModel;

@@ -13,6 +13,9 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+
+
+//this class takes input from user for saving expense
 public class expenseinput extends AppCompatActivity {
 
     EditText editTextdescription;

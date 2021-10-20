@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-
+//this page lists three button: expense, income, view activity
 public class homePageActivity extends AppCompatActivity {
     // Object name declarations
     private Button button2;         //Main menu "Expense" button object
