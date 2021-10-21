@@ -124,7 +124,7 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
             String id=databaseTransection.push().getKey();
 
             // call the transection method with the user information
-            transection transection1=new transection (id,transectiondescription,transectionprice,transectioncategory);
+            transaction transection1=new transaction (id,transectiondescription,transectionprice,transectioncategory);
             // sets the value with unique id that is automatically created.
             databaseTransection.child(id).setValue(transection1);
 
