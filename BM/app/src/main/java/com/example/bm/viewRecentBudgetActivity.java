@@ -3,6 +3,7 @@ package com.example.bm;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -99,6 +100,7 @@ public class viewRecentBudgetActivity extends AppCompatActivity {
             @Override
             public void onChanged(@androidx.annotation.Nullable final List<transactionEntity> words) {
                 adapter.setWords(words);
+                Log.e("room", "list size: " + words.size());
             }
         });
 

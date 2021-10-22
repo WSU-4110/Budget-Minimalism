@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,6 +22,9 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Calendar;
+import java.util.List;
 
 public class expenseInputScreen extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -50,6 +54,24 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
         // This code connects the xml back button and the java object
         // then it creates a click listener, so that when we click on it
         // the button calls the returnToMainMenuPlease()
+
+
+        // Mitchell
+        // This code enables the categories spinner on the expense input page
+
+
+
+
+        DescriptionBox = findViewById(R.id.editText);
+        submitButton = (Button) findViewById(R.id.expenseSubmit);
+        dataViewModel2 = new ViewModelProvider(this).get(dataViewModel.class);
+        amountEditText = findViewById(R.id.editText2);
+        Spinner spinner = findViewById(R.id.spinner4); // create new spinner object
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.expenseCategoriesArray, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
+
         back = (FloatingActionButton) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,31 +80,18 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
             }
         });
 
-        // Mitchell
-        // This code enables the categories spinner on the expense input page
-        Spinner spinner = findViewById(R.id.spinner4); // create new spinner object
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.expenseCategoriesArray, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
-
-
-        DescriptionBox = findViewById(R.id.editText);
-        submitButton = (Button) findViewById(R.id.expenseSubmit);
-        dataViewModel2 = new ViewModelProvider(this).get(dataViewModel.class);
-        amountEditText = findViewById(R.id.editText2);
-
 
         submitButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                String description = DescriptionBox.getText().toString();
-                String amount = amountEditText.getText().toString();
-                String sendIt ="- "+amount+" "+description+ " on "+date;
-                if (!sendIt.equals("")) {
-                    transactionEntity newTransaction2 = new transactionEntity(sendIt);
+                String description = DescriptionBox.getText().toString().trim();
+                double amount = Double.parseDouble(amountEditText.getText().toString().trim());
+                //String sendIt ="- "+amount+" "+description+ " on "+date;
+                if (description != null && description.length() > 0 &&  amount>0) {
+                    transactionEntity newTransaction2 = new transactionEntity(description, "Paycheck", amount, Calendar.getInstance().getTime().toString(), 0);
                     dataViewModel2.insert(newTransaction2);
+                    Log.e("ExpenseInputScreen", "expense is added");
                     returnToMainMenuPlease();
                 } else {
                     toastMessage("Please fill in all fields");
@@ -100,18 +109,24 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
         databaseTransection= FirebaseDatabase.getInstance().getReference("transection");
 
         //once the user fills out the axpense information and hits submit, this method gets called
-        buttonsubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //calls the function that adds the transection to the database.
-                addTransection();
+//        buttonsubmit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //calls the function that adds the transection to the database.
+//                addTransection();
+//
+//            }
+//        });
 
-            }
-        });
+
 
 
 
     } // end onCreate
+
+    private void addExpense(){
+
+    }
 
     private void addTransection(){
 

@@ -10,7 +10,7 @@ import java.util.List;
 @Dao
 public interface dataDAO {
 
-    @Query("SELECT * from transaction_table ORDER BY transactionEntity")
+    @Query("SELECT * from transaction_table")
     LiveData<List<transactionEntity>> getAlphabetizedWords();
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
@@ -18,5 +18,8 @@ public interface dataDAO {
 
     @Query("DELETE FROM transaction_table")
     void deleteAll();
+
+    @Query("SELECT * FROM transaction_table")
+    List<transactionEntity> getAllTransaction();
 
 }

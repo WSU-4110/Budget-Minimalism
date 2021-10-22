@@ -2,6 +2,7 @@ package com.example.bm;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,6 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.Calendar;
 
 
 //this class takes input from user for recording income
@@ -74,9 +77,12 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
 
                 // if both fields not filled, you cannot continue.
                 if(!description.equals("") && !amount.equals("")) {
-                    transactionEntity newTransaction = new transactionEntity(sendIt);
+                    transactionEntity newTransaction2 = new transactionEntity(description, "Paycheck", Double.parseDouble(amount), Calendar.getInstance().getTime().toString(), 1);
+                    dataViewModel.insert(newTransaction2);
+                    Log.e("room", "income is added");
+                    //transactionEntity newTransaction = new transactionEntity(sendIt);
                     // insert new transaction object view our database object
-                    dataViewModel.insert(newTransaction);
+                    //dataViewModel.insert(newTransaction);
                     returnToMainMenuPlease();
                 } else {
                     toastMessage("Please fill in all fields");
