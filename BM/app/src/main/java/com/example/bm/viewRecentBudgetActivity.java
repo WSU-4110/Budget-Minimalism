@@ -128,6 +128,20 @@ public class viewRecentBudgetActivity extends AppCompatActivity {
         });
     }
 
+//    public void setTotalExpense_(TextView t){
+//
+//
+//        dataViewModel.getTotalExpense().observe(this, new Observer<Double>(){
+//            @Override
+//            public void onChanged(Double aDouble) {
+//                if(aDouble!= null) t.setText(aDouble+ "");
+//                else t.setText(0.00 + "");
+//            }
+//
+//
+//        });
+//    }
+
     // Mitchell
     // to return user to the view selection page
     public void returnToMainMenuPlease() {
