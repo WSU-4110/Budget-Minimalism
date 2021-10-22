@@ -9,7 +9,6 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.bm.R;
 
 public class view_spending_delta extends AppCompatActivity {
 
