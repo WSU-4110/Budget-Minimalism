@@ -7,6 +7,7 @@ package com.example.bm;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -92,7 +93,7 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
                     insertExpense(description,"Grocery", amount);
                     returnToMainMenuPlease();
                 } else {
-                    toastMessage("Please fill in all fields");
+                    toastMessage(expenseInputScreen.this,"Please fill in all fields");
                 }
             }
         });
@@ -123,7 +124,7 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
     } // end onCreate
     //sayma
 
-    private void insertExpense(String description, String type, double amount){
+    public void insertExpense(String description, String type, double amount){
         transactionEntity newTransaction2 = new transactionEntity(description, type, amount, Calendar.getInstance().getTime().toString(), 0);
         dataViewModel2.insert(newTransaction2);
         Log.e("ExpenseInputScreen", "expense is added");
@@ -185,7 +186,12 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
     }
 
     // Toast message function for data entry input
-    private void toastMessage(String message) {
-        Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
+    private void toastMessage(Activity a, String message) {
+        a.runOnUiThread(new Runnable() {
+            public void run() {
+                Toast.makeText(a, "Hello", Toast.LENGTH_SHORT).show();
+            }
+        });
+        //Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
     }
 }

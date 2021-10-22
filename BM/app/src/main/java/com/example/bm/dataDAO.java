@@ -25,4 +25,7 @@ public interface dataDAO {
     @Query("select sum(amount) from transaction_table where transactionType=0")
     LiveData<java.lang.Double> getTotalExpense();
 
+    @Query("select * from transaction_table where amount =:amount and transactionType =:tType")
+    List<transactionEntity> getDescription(double amount, int tType);
+
 }

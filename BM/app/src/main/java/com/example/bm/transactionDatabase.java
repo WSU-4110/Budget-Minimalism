@@ -39,6 +39,10 @@ public abstract class transactionDatabase extends RoomDatabase {
         return INSTANCE;
     }
 
+    public dataDAO getDataDao()
+    {
+        return INSTANCE.dataDAO();
+    }
     // Mitchell
     // overrides onOpen to populate the database
     private static RoomDatabase.Callback sRoomDatabaseCallback = new RoomDatabase.Callback() {
