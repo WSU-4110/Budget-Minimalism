@@ -1,16 +1,16 @@
 package com.example.bm;
 
-public class transection {
+public class transaction {
     private String id;
     private String description;
     private String price;
     private String category;
 
 
-    public transection() {
+    public transaction() {
     }
 
-    public transection(String id, String description, String price, String category) {
+    public transaction(String id, String description, String price, String category) {
         this.id = id;
         this.description = description;
         this.price = price;
@@ -47,6 +47,24 @@ public class transection {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+    public boolean validatePrice(String price)
+    {
+        try {
+            double p = Double.parseDouble(price);
+            return true;
+        }
+        catch (NumberFormatException e)
+        {
+            return false;
+        }
+    }
+    public boolean checkNull()
+    {
+        if(this.id ==null || this.category==null || this.description==null || this.price==null)
+            return true;
+        else
+            return false;
     }
 }
 

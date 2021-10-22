@@ -1,4 +1,4 @@
-package com.example.bm.userInterfaceJava;
+package com.example.bm;
 
 import android.app.ProgressDialog;
 import android.os.Handler;
