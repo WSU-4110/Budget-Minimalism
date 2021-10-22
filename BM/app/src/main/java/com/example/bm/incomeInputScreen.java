@@ -91,7 +91,7 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
     // setting up a date object
     java.util.Date date = new java.util.Date();
 
-    private void addIncome(String description, String type, double amount ){
+    public void addIncome(String description, String type, double amount ){
         transactionEntity newTransaction2 = new transactionEntity(description, type, amount, Calendar.getInstance().getTime().toString(), 1);
         dataViewModel.insert(newTransaction2);
         Log.e("room", "income is added");

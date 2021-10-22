@@ -33,15 +33,14 @@ public class InsertExpenseTest {
     private dataDAO dataDAo;
     private transactionDatabase db;
 
-//    @Rule
-//    public ActivityScenarioRule<expenseInputScreen> e =
-//            new ActivityScenarioRule(expenseInputScreen.class);
+    @Rule
+    public ActivityScenarioRule<expenseInputScreen> rule  = new ActivityScenarioRule<>(expenseInputScreen.class);
 
     @Before
     public void createDb() {
         Context context = ApplicationProvider.getApplicationContext();
         Looper.prepare();
-        db = Room.inMemoryDatabaseBuilder(context, transactionDatabase.class).build();
+        db = Room.inMemoryDatabaseBuilder(context, transactionDatabase.class).allowMainThreadQueries().build();
         dataDAo = db.dataDAO();
         //e = new expenseInputScreen();
     }
@@ -50,21 +49,16 @@ public class InsertExpenseTest {
 
     @Test
     public void InsertSingleExpenseTest() {
-        //e.getScenario();
+        rule.getScenario().onActivity(activity -> {
+            // use 'activity'.
+            activity.insertExpense("Target", "Shopping", 30.30);
 
-            //expenseInputScreen e = new expenseInputScreen();
-            //e.getScenario().insertExpense("Walmart", "Grocery", 11.30);
-            transactionEntity t = new transactionEntity("Macy","Shopping",30.30, Calendar.getInstance().getTime().toString(), 0);
-            dataDAo.insert(t);
-            List<transactionEntity> desc = dataDAo.getDescription(30.30, 0);
-            Log.e("testing", desc.get(0).getDescription());
+            String desc = dataDAo.getDescription(30.30, 0);
+            Log.e("testing", desc);
             //assertThat("Walmart", desc);
-            assertEquals("Macy", desc.get(0).getDescription());
+            assertEquals("Target", desc);
 
-            // Here you can call methods which have Handler
-
-
-
+        });
         //assertEquals("com.example.bm", appContext.getPackageName());
     }
 
