@@ -48,5 +48,23 @@ public class transaction {
     public void setCategory(String category) {
         this.category = category;
     }
+    public boolean validatePrice(String price)
+    {
+        try {
+            double p = Double.parseDouble(price);
+            return true;
+        }
+        catch (NumberFormatException e)
+        {
+            return false;
+        }
+    }
+    public boolean checkNull()
+    {
+        if(this.id ==null || this.category==null || this.description==null || this.price==null)
+            return true;
+        else
+            return false;
+    }
 }
 
