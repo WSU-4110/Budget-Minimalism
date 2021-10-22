@@ -89,9 +89,7 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
                 double amount = Double.parseDouble(amountEditText.getText().toString().trim());
                 //String sendIt ="- "+amount+" "+description+ " on "+date;
                 if (description != null && description.length() > 0 &&  amount>0) {
-                    transactionEntity newTransaction2 = new transactionEntity(description, "Paycheck", amount, Calendar.getInstance().getTime().toString(), 0);
-                    dataViewModel2.insert(newTransaction2);
-                    Log.e("ExpenseInputScreen", "expense is added");
+                    insertExpense(description,"Grocery", amount);
                     returnToMainMenuPlease();
                 } else {
                     toastMessage("Please fill in all fields");
@@ -123,9 +121,12 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
 
 
     } // end onCreate
+    //sayma
 
-    private void addExpense(){
-
+    private void insertExpense(String description, String type, double amount){
+        transactionEntity newTransaction2 = new transactionEntity(description, type, amount, Calendar.getInstance().getTime().toString(), 0);
+        dataViewModel2.insert(newTransaction2);
+        Log.e("ExpenseInputScreen", "expense is added");
     }
 
     private void addTransection(){

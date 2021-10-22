@@ -77,12 +77,7 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
 
                 // if both fields not filled, you cannot continue.
                 if(!description.equals("") && !amount.equals("")) {
-                    transactionEntity newTransaction2 = new transactionEntity(description, "Paycheck", Double.parseDouble(amount), Calendar.getInstance().getTime().toString(), 1);
-                    dataViewModel.insert(newTransaction2);
-                    Log.e("room", "income is added");
-                    //transactionEntity newTransaction = new transactionEntity(sendIt);
-                    // insert new transaction object view our database object
-                    //dataViewModel.insert(newTransaction);
+                    addIncome(description, "Paycheck", Double.parseDouble(amount));
                     returnToMainMenuPlease();
                 } else {
                     toastMessage("Please fill in all fields");
@@ -95,6 +90,12 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
     // Mitchell Fenner
     // setting up a date object
     java.util.Date date = new java.util.Date();
+
+    private void addIncome(String description, String type, double amount ){
+        transactionEntity newTransaction2 = new transactionEntity(description, type, amount, Calendar.getInstance().getTime().toString(), 1);
+        dataViewModel.insert(newTransaction2);
+        Log.e("room", "income is added");
+    }
 
     // This function simply sends the user back to the main menu activity
     public void returnToMainMenuPlease() {

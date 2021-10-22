@@ -22,4 +22,7 @@ public interface dataDAO {
     @Query("SELECT * FROM transaction_table")
     List<transactionEntity> getAllTransaction();
 
+    @Query("select sum(amount) from transaction_table where transactionType=0")
+    LiveData<java.lang.Double> getTotalExpense();
+
 }

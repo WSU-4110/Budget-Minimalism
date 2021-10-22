@@ -34,42 +34,35 @@
         app:layout_constraintVertical_bias="0.312"
         tools:itemCount="13" />
 
-    <TextView
-        android:id="@+id/totalAmt"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="344dp"
-        android:layout_marginBottom="102dp"
-        android:background="#FF8FDBF1"
-        android:text="Total Expense: "
-        android:textSize="20dp"
-        android:visibility="visible"
-        app:autoSizeTextType="uniform"
-        app:layout_constraintBottom_toTopOf="@+id/recview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@id/recview">
 
-    <TextView
-        android:id="@+id/totalAmtid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="344dp"
-        android:layout_marginBottom="102dp"
-        android:background="#FF8FDBF1"
-        android:text="totalexpense"
-        android:textSize="20dp"
-        app:autoSizeTextType="uniform"
-        app:layout_constraintBottom_toTopOf="@+id/recview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/totalAmt"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.166" />
+        <TextView
+            android:id="@+id/totalAmt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FF8FDBF1"
+            android:text="Total Expense: "
+            android:textSize="20dp"
+            android:visibility="visible"
+            app:autoSizeTextType="uniform" />
+
+        <TextView
+            android:id="@+id/totalAmtid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FF8FDBF1"
+            android:text="totalexpense"
+            android:textSize="20dp"
+            app:autoSizeTextType="uniform" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
