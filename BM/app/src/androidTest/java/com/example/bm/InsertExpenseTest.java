@@ -51,15 +51,20 @@ public class InsertExpenseTest {
     public void InsertSingleExpenseTest() {
         rule.getScenario().onActivity(activity -> {
 
-            activity.insertExpense("Target", "Shopping", 30.30);
+//            activity.insertExpense("Target", "Shopping", 30.30);
 
 
 
         });
-        String desc = dataDAo.getDescription(30.30, 0);
-        Log.e("testing", desc);
 
-        assertEquals("Target", desc);
+        transactionEntity t = new transactionEntity("Target", "Grocery", 44.30, Calendar.getInstance().getTime().toString(), 0);
+        dataDAo.insert(t);
+        List<transactionEntity> tt = dataDAo.getDescriptionA(44.30);
+
+
+        Log.e("testing", tt.get(0).getDescription());
+
+        assertEquals("Target", tt.get(0).getDescription());
     }
 
     @After
