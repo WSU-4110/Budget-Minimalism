@@ -40,9 +40,9 @@ public class InsertExpenseTest {
     public void createDb() {
         Context context = ApplicationProvider.getApplicationContext();
         Looper.prepare();
-        db = Room.inMemoryDatabaseBuilder(context, transactionDatabase.class).allowMainThreadQueries().build();
+        db = Room.inMemoryDatabaseBuilder(context, transactionDatabase.class).build();
         dataDAo = db.dataDAO();
-        //e = new expenseInputScreen();
+
     }
 
 
@@ -50,16 +50,16 @@ public class InsertExpenseTest {
     @Test
     public void InsertSingleExpenseTest() {
         rule.getScenario().onActivity(activity -> {
-            // use 'activity'.
+
             activity.insertExpense("Target", "Shopping", 30.30);
 
-            String desc = dataDAo.getDescription(30.30, 0);
-            Log.e("testing", desc);
-            //assertThat("Walmart", desc);
-            assertEquals("Target", desc);
+
 
         });
-        //assertEquals("com.example.bm", appContext.getPackageName());
+        String desc = dataDAo.getDescription(30.30, 0);
+        Log.e("testing", desc);
+
+        assertEquals("Target", desc);
     }
 
     @After

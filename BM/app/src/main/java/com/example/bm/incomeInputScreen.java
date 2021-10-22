@@ -1,5 +1,6 @@
 package com.example.bm;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -77,7 +78,7 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
 
                 // if both fields not filled, you cannot continue.
                 if(!description.equals("") && !amount.equals("")) {
-                    addIncome(description, "Paycheck", Double.parseDouble(amount));
+                    addIncome_(dataViewModel, description, "Paycheck", Double.parseDouble(amount));
                     returnToMainMenuPlease();
                 } else {
                     toastMessage("Please fill in all fields");
@@ -95,6 +96,12 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
         transactionEntity newTransaction2 = new transactionEntity(description, type, amount, Calendar.getInstance().getTime().toString(), 1);
         dataViewModel.insert(newTransaction2);
         Log.e("room", "income is added");
+    }
+
+    public void addIncome_(dataViewModel dataViewModel, String description, String type, double amount ){
+        transactionEntity newTransaction2 = new transactionEntity(description, type, amount, Calendar.getInstance().getTime().toString(), 1);
+        dataViewModel.insert(newTransaction2);
+        Log.e("room__", "income is added");
     }
 
     // This function simply sends the user back to the main menu activity

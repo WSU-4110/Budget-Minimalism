@@ -9,6 +9,8 @@ import android.os.AsyncTask;
 import android.os.Looper;
 import android.util.Log;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.room.Room;
 import androidx.test.core.app.ActivityScenario;
 import androidx.test.core.app.ApplicationProvider;
@@ -34,6 +36,7 @@ public class InsertIncomeTest {
     //private Context context = ApplicationProvider.getApplicationContext();
     private dataDAO dataDAo;
     private transactionDatabase db;
+    private dataViewModel dataViewModel;
 
     @Rule
     public ActivityScenarioRule<incomeInputScreen> rule  = new ActivityScenarioRule<incomeInputScreen>(incomeInputScreen.class);
@@ -44,27 +47,31 @@ public class InsertIncomeTest {
         Looper.prepare();
         db = Room.inMemoryDatabaseBuilder(context, transactionDatabase.class).build();
         dataDAo = db.dataDAO();
+
     }
 
 
 
     @Test
     public void InsertSingleExpenseTest() {
-        
-        rule.getScenario().onActivity(activity -> {
 
-            activity.addIncome("Wayne State", "Paycheck", 110.30);
+        rule.getScenario().onActivity(activity -> {
+            //dataViewModel dataViewModel2 = new ViewModelProvider(activity).get(dataViewModel.class);
+//            dataViewModel =   new ViewModelProvider(activity).get(dataViewModel.class);
+//            activity.addIncome_(dataViewModel,"Wayne State", "Paycheck", 110.30);
+
 
 
         });
-        String desc ="Wayne State";// dataDAo.getDescription(110.30, 1);
-        Log.e("testing", "Wayne State");
-        assertEquals("Wayne State", desc);
+        transactionEntity t = new transactionEntity("Wayne State", "Paycheck", 110.30, Calendar.getInstance().getTime().toString(), 1);
+        dataDAo.insert(t);
+        List<transactionEntity> tt = dataDAo.getDescriptionA(110.30);
 
 
+        Log.e("testing", tt.get(0).getDescription());
 
+        assertEquals("Wayne State", tt.get(0).getDescription());
 
-        //assertEquals("com.example.bm", appContext.getPackageName());
     }
 
     @After

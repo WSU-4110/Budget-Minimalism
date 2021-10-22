@@ -28,4 +28,7 @@ public interface dataDAO {
     @Query("select transactionEntity from transaction_table where amount =:amount and transactionType =:tType")
     String getDescription(double amount, int tType);
 
+    @Query("select * from transaction_table where amount =:amount")
+    List<transactionEntity> getDescriptionA(double amount);
+
 }
