@@ -1,15 +1,18 @@
 package com.example.bm;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,12 +31,15 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
     private EditText DescriptionBox;
     private Button submitButton;
     private EditText amountEditText;
+    private TextView textView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_income_inputscreen);
+        textView = (TextView)findViewById(R.id.textView12);
+        setText(textView);
 
 
         // Mitchell:
@@ -53,9 +59,10 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
         // Mitchell
         // This code enables the categories spinner on the expense input page
         Spinner spinner = findViewById(R.id.spinner); // create new spinner object
-        ArrayAdapter<CharSequence> adapter =
-                ArrayAdapter.createFromResource(
-                    this, R.array.incomeCategoriesArray, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = setSpinnerItems(this,spinner);
+        //ArrayAdapter<CharSequence> adapter =
+         //       ArrayAdapter.createFromResource(
+        //                context, R.array.incomeCategoriesArray, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
@@ -125,6 +132,17 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
     // Code created by default in android studio
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+    }
+
+    public void setText(TextView t){
+        t.setText(R.string.text_label1);
+    }
+
+    public ArrayAdapter<CharSequence> setSpinnerItems(Context context, Spinner spinner){
+        ArrayAdapter<CharSequence> adapter =
+                ArrayAdapter.createFromResource(
+                        context, R.array.incomeCategoriesArray, android.R.layout.simple_spinner_item);
+        return adapter;
     }
 
 
