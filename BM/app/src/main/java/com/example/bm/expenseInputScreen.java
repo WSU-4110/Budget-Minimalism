@@ -18,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -42,6 +43,7 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
     Spinner spinner12;
     Button buttonsubmit;
     DatabaseReference databaseTransection;
+    TextView tv;
 
 
 
@@ -67,6 +69,8 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
         submitButton = (Button) findViewById(R.id.expenseSubmit);
         dataViewModel2 = new ViewModelProvider(this).get(dataViewModel.class);
         amountEditText = findViewById(R.id.editText2);
+        tv = findViewById(R.id.textView12);
+        setText(tv);
         Spinner spinner = findViewById(R.id.spinner4); // create new spinner object
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.expenseCategoriesArray, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -186,12 +190,16 @@ public class expenseInputScreen extends AppCompatActivity implements AdapterView
     }
 
     // Toast message function for data entry input
-    private void toastMessage(Activity a, String message) {
+    public void toastMessage(Activity a, String message) {
         a.runOnUiThread(new Runnable() {
             public void run() {
                 Toast.makeText(a, "Hello", Toast.LENGTH_SHORT).show();
             }
         });
         //Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
+    }
+
+    public void setText(TextView t){
+        t.setText(R.string.InputExpense);
     }
 }
