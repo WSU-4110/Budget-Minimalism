@@ -99,7 +99,7 @@ public class viewRecentBudgetActivity extends AppCompatActivity {
     } // end onCreate
 
     //this lists all recent activity in a recyclerview model
-    private void showRecentActivity(dataViewModel dataViewModel){
+    public void showRecentActivity(dataViewModel dataViewModel){
         RecyclerView recyclerView = findViewById(R.id.recview);
         final transactionsAdapter adapter = new transactionsAdapter(this);
         recyclerView.setAdapter(adapter);

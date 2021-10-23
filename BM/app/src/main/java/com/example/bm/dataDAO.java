@@ -13,6 +13,9 @@ public interface dataDAO {
     @Query("SELECT * from transaction_table")
     LiveData<List<transactionEntity>> getAlphabetizedWords();
 
+    @Query("SELECT * from transaction_table")
+    List<transactionEntity> getAllTransactions();
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(transactionEntity transactionEntity);
 
