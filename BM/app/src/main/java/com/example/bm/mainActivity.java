@@ -25,7 +25,7 @@ public class mainActivity extends AppCompatActivity {
     private EditText Password;
     private TextView Info;
     private Button Login;
-    private TextView userSignup;
+    private Button Back;
 
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
@@ -39,7 +39,7 @@ public class mainActivity extends AppCompatActivity {
         Email = (EditText)findViewById(R.id.uname);
         Password = (EditText)findViewById(R.id.pass);
         Login = (Button) findViewById(R.id.btnLogin);
-        userSignup = (TextView) findViewById(R.id.tvsignup);
+        Back = (Button) findViewById(R.id.backButton);
 
         //Database helper
         firebaseAuth = FirebaseAuth.getInstance();
@@ -79,12 +79,14 @@ public class mainActivity extends AppCompatActivity {
             }
         });
 
-        //Mohammed Rahin
+
         //After click on Sign In button it will validate the user email and pass
-        userSignup.setOnClickListener(new View.OnClickListener() {
+        Back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(mainActivity.this, com.example.bm.signUpActivity.class));
+                Intent intent = new Intent(mainActivity.this, initialScreen.class);
+                startActivity(intent);
+                mainActivity.this.finish();
             }
         });
     }
