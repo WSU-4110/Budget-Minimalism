@@ -1,16 +1,27 @@
 package com.example.bm;
 
+import static com.example.bm.setBudgetActivity.monthlyBudget;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import com.example.bm.R;
+
+import android.widget.TextView;
 import android.widget.Toast;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.bm.dataViewModel;
+import com.example.bm.expenseInputScreen;
+import com.example.bm.incomeInputScreen;
+import com.example.bm.selectWhichViewPage;
+import com.example.bm.settingsPage;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
@@ -21,8 +32,11 @@ public class homePageActivity extends AppCompatActivity {
     private Button button2;         //Main menu "Expense" button object
     private Button incomeButton;    //Main menu "Income" button object
     private Button viewButton;
+    private Button setBudgetButton;
+    private TextView budgetLabel;
+    public static Budget monthlyBudget;
     public static final int NEW_WORD_ACTIVITY_REQUEST_CODE = 1;
-    private dataViewModel dataViewModel;
+    private com.example.bm.dataViewModel dataViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +58,7 @@ public class homePageActivity extends AppCompatActivity {
         // We really need to change the strings.xml file so its not so confusing but...
         // then it creates a click listener, so that when we click on it
         // the button calls the openActivity_expense_inputscreen()
+        monthlyBudget = new Budget(0.00);
         button2 = (Button) findViewById(R.id.button2); // Main menu sends to expense page
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +97,27 @@ public class homePageActivity extends AppCompatActivity {
                 sendYouToViewRecent();
             }
         });
+
+        // This sends the user to the set budget screen
+        setBudgetButton = (Button) findViewById(R.id.button4);
+        setBudgetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendToSetBudgetScreen();
+            }
+        });
+
+        if (monthlyBudget.getBudgetValue() == 0.00) {
+            // Display 0
+            budgetLabel = (TextView) findViewById(R.id.textView16);
+            budgetLabel.setText("$0.00");
+        }
+        else {
+            // Set the textview to be the budget value
+            budgetLabel = (TextView) findViewById(R.id.textView16);
+            budgetLabel.setText("$" + monthlyBudget.getBudgetValue());
+        }
+
     }
     // Mitchell wrote this function
     public void openActivity_expense_inputscreen() {
@@ -106,29 +142,34 @@ public class homePageActivity extends AppCompatActivity {
         Intent intent = new Intent (this, selectWhichViewPage.class);
         startActivity(intent);
     }
+
+    public void sendToSetBudgetScreen() {
+        Intent intent = new Intent (this, setBudgetActivity2.class);
+        startActivity(intent);
+    }
 /**
-    // Android Studio default code
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+ // Android Studio default code
+ @Override
+ public boolean onCreateOptionsMenu(Menu menu) {
+ // Inflate the menu; this adds items to the action bar if it is present.
+ getMenuInflater().inflate(R.menu.menu_main, menu);
+ return true;
+ }
 
-    // Android Studio default code
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+ // Android Studio default code
+ @Override
+ public boolean onOptionsItemSelected(MenuItem item) {
+ // Handle action bar item clicks here. The action bar will
+ // automatically handle clicks on the Home/Up button, so long
+ // as you specify a parent activity in AndroidManifest.xml.
+ int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+ //noinspection SimplifiableIfStatement
+ if (id == R.id.action_settings) {
+ return true;
+ }
 
-        return super.onOptionsItemSelected(item);
-    }
-**/
+ return super.onOptionsItemSelected(item);
+ }
+ **/
 }
