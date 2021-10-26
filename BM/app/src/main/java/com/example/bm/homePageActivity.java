@@ -29,6 +29,7 @@ public class homePageActivity extends AppCompatActivity {
     private Button viewButton;
     private Button setBudgetButton;
     private TextView budgetLabel;
+    public static Budget monthlyBudget;
     public static final int NEW_WORD_ACTIVITY_REQUEST_CODE = 1;
     private com.example.bm.dataViewModel dataViewModel;
 
@@ -44,6 +45,7 @@ public class homePageActivity extends AppCompatActivity {
         // We really need to change the strings.xml file so its not so confusing but...
         // then it creates a click listener, so that when we click on it
         // the button calls the openActivity_expense_inputscreen()
+        monthlyBudget = new Budget(0.00);
         button2 = (Button) findViewById(R.id.button2); // Main menu sends to expense page
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +94,7 @@ public class homePageActivity extends AppCompatActivity {
             }
         });
 
-        if (monthlyBudget == null) {
+        if (monthlyBudget.getBudgetValue() == 0.00) {
             // Display 0
             budgetLabel = (TextView) findViewById(R.id.textView16);
             budgetLabel.setText("$0.00");
@@ -129,7 +131,7 @@ public class homePageActivity extends AppCompatActivity {
     }
 
     public void sendToSetBudgetScreen() {
-        Intent intent = new Intent (this, setBudgetActivity.class);
+        Intent intent = new Intent (this, setBudgetActivity2.class);
         startActivity(intent);
     }
 /**

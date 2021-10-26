@@ -12,6 +12,9 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
+            android:name=".setBudgetActivity2"
+            android:exported="true" />
+        <activity
             android:name=".initialScreen"
             android:exported="false" />
         <activity android:name=".expenseinput" />
@@ -24,7 +27,7 @@
         <activity android:name=".viewRecentBudgetActivity" />
         <activity android:name=".setIncomeCategories" />
         <activity android:name=".setExpenseCategories" />
-        <activity android:name=".userInterfaceJava.view_spending_delta" />
+        <activity android:name=".view_spending_delta" />
         <activity android:name=".splashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

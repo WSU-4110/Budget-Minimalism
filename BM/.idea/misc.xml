@@ -7,6 +7,7 @@
         <entry key="..\:/Users/ayaha/StudioProjects/Budget-Minimalism/BM/app/src/main/res/layout/activity_home_page.xml" value="0.2341485507246377" />
         <entry key="..\:/Users/ayaha/StudioProjects/Budget-Minimalism/BM/app/src/main/res/layout/activity_main.xml" value="0.2341485507246377" />
         <entry key="..\:/Users/ayaha/StudioProjects/Budget-Minimalism/BM/app/src/main/res/layout/activity_select_which_view_page.xml" value="0.2341485507246377" />
+        <entry key="..\:/Users/ayaha/StudioProjects/Budget-Minimalism/BM/app/src/main/res/layout/activity_set_budget2.xml" value="0.3671875" />
         <entry key="..\:/Users/ayaha/StudioProjects/Budget-Minimalism/BM/app/src/main/res/layout/activity_set_expense_categories.xml" value="0.2341485507246377" />
         <entry key="..\:/Users/ayaha/StudioProjects/Budget-Minimalism/BM/app/src/main/res/layout/activity_set_income_categories.xml" value="0.2341485507246377" />
         <entry key="..\:/Users/ayaha/StudioProjects/Budget-Minimalism/BM/app/src/main/res/layout/activity_settings_page.xml" value="0.2341485507246377" />
@@ -18,9 +19,6 @@
         <entry key="..\:/Users/ayaha/StudioProjects/Budget-Minimalism/BM/app/src/main/res/layout/recyclerview_item.xml" value="0.2341485507246377" />
         <entry key="..\:/Users/ayaha/StudioProjects/Budget-Minimalism/BM/app/src/main/res/layout/set_budget_layout.xml" value="0.2341485507246377" />
         <entry key="..\:/Users/nithi/Budget-Minimalism/BM/app/src/main/res/layout/activity_sign_up.xml" value="0.4" />
-        <entry key="..\:/Users/saber/CSC6110/Budget-Minimalism/BM/app/src/main/res/layout/activity_initial_screen.xml" value="0.2957427536231884" />
-        <entry key="..\:/Users/saber/CSC6110/Budget-Minimalism/BM/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
-        <entry key="..\:/Users/saber/CSC6110/Budget-Minimalism/BM/app/src/main/res/layout/activity_sign_up.xml" value="0.2957427536231884" />
       </map>
     </option>
   </component>
