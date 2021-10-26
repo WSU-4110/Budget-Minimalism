@@ -16,15 +16,21 @@ public class dataViewModel extends AndroidViewModel {
     //   the UI when the data actually changes.
     // - Repository is completely separated from the UI through the ViewModel.
     private LiveData<List<transactionEntity>> allTransactionObjects;
+    private LiveData<java.lang.Double> totalExpense = null;
 
     public dataViewModel(Application application) {
         super(application);
         repositoryObject = new transactionRepository(application);
         allTransactionObjects = repositoryObject.getAllWords();
+        totalExpense = repositoryObject.getTotalExpense();
     }
 
     LiveData<List<transactionEntity>> getAllWords() {
         return allTransactionObjects;
+    }
+
+    public LiveData<java.lang.Double> getTotalExpense(){
+        return totalExpense;
     }
 
     void insert(transactionEntity transactionEntity) {

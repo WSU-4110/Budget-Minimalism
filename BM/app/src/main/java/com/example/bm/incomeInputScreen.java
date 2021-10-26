@@ -1,13 +1,18 @@
 package com.example.bm;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +20,10 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.Calendar;
+
+
+//this class takes input from user for recording income
 public class incomeInputScreen extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private dataViewModel dataViewModel;
@@ -22,12 +31,15 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
     private EditText DescriptionBox;
     private Button submitButton;
     private EditText amountEditText;
+    private TextView textView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_income_inputscreen);
+        textView = (TextView)findViewById(R.id.textView12);
+        setText(textView);
 
 
         // Mitchell:
@@ -47,9 +59,10 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
         // Mitchell
         // This code enables the categories spinner on the expense input page
         Spinner spinner = findViewById(R.id.spinner); // create new spinner object
-        ArrayAdapter<CharSequence> adapter =
-                ArrayAdapter.createFromResource(
-                    this, R.array.incomeCategoriesArray, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = setSpinnerItems(this,spinner);
+        //ArrayAdapter<CharSequence> adapter =
+         //       ArrayAdapter.createFromResource(
+        //                context, R.array.incomeCategoriesArray, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
@@ -72,9 +85,7 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
 
                 // if both fields not filled, you cannot continue.
                 if(!description.equals("") && !amount.equals("")) {
-                    transactionEntity newTransaction = new transactionEntity(sendIt);
-                    // insert new transaction object view our database object
-                    dataViewModel.insert(newTransaction);
+                    addIncome_(dataViewModel, description, "Paycheck", Double.parseDouble(amount));
                     returnToMainMenuPlease();
                 } else {
                     toastMessage("Please fill in all fields");
@@ -87,6 +98,18 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
     // Mitchell Fenner
     // setting up a date object
     java.util.Date date = new java.util.Date();
+
+    public void addIncome(String description, String type, double amount ){
+        transactionEntity newTransaction2 = new transactionEntity(description, type, amount, Calendar.getInstance().getTime().toString(), 1);
+        dataViewModel.insert(newTransaction2);
+        Log.e("room", "income is added");
+    }
+
+    public void addIncome_(dataViewModel dataViewModel, String description, String type, double amount ){
+        transactionEntity newTransaction2 = new transactionEntity(description, type, amount, Calendar.getInstance().getTime().toString(), 1);
+        dataViewModel.insert(newTransaction2);
+        Log.e("room__", "income is added");
+    }
 
     // This function simply sends the user back to the main menu activity
     public void returnToMainMenuPlease() {
@@ -109,6 +132,17 @@ public class incomeInputScreen extends AppCompatActivity implements AdapterView.
     // Code created by default in android studio
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+    }
+
+    public void setText(TextView t){
+        t.setText(R.string.text_label1);
+    }
+
+    public ArrayAdapter<CharSequence> setSpinnerItems(Context context, Spinner spinner){
+        ArrayAdapter<CharSequence> adapter =
+                ArrayAdapter.createFromResource(
+                        context, R.array.incomeCategoriesArray, android.R.layout.simple_spinner_item);
+        return adapter;
     }
 
 

@@ -19,6 +19,7 @@
         <entry key="..\:/Users/ayaha/StudioProjects/Budget-Minimalism/BM/app/src/main/res/layout/recyclerview_item.xml" value="0.2341485507246377" />
         <entry key="..\:/Users/ayaha/StudioProjects/Budget-Minimalism/BM/app/src/main/res/layout/set_budget_layout.xml" value="0.2341485507246377" />
         <entry key="..\:/Users/nithi/Budget-Minimalism/BM/app/src/main/res/layout/activity_sign_up.xml" value="0.4" />
+        <entry key="..\:/Users/he9660/Documents/project/Budget/BM/app/src/main/res/layout/activity_income_inputscreen.xml" value="1.1" />
       </map>
     </option>
   </component>
@@ -27,5 +28,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
   </component>
 </project>

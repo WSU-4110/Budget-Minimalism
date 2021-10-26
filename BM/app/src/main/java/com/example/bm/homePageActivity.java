@@ -4,6 +4,7 @@ import static com.example.bm.setBudgetActivity.monthlyBudget;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import com.example.bm.R;
@@ -13,6 +14,8 @@ import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.bm.dataViewModel;
 import com.example.bm.expenseInputScreen;
@@ -21,7 +24,9 @@ import com.example.bm.selectWhichViewPage;
 import com.example.bm.settingsPage;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.List;
 
+//this page lists three button: expense, income, view activity
 public class homePageActivity extends AppCompatActivity {
     // Object name declarations
     private Button button2;         //Main menu "Expense" button object
@@ -39,6 +44,14 @@ public class homePageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
         //Toolbar toolbar = findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
+
+        dataViewModel = new ViewModelProvider(this).get(dataViewModel.class);
+        dataViewModel.getAllWords().observe(this, new Observer<List<transactionEntity>>() {
+            @Override
+            public void onChanged(@androidx.annotation.Nullable final List<transactionEntity> words) {
+                Log.e("room", "list size: " + words.size());
+            }
+        });
 
         // Mitchell:
         // This code connects the xml "Expense" button and the java object "button2"

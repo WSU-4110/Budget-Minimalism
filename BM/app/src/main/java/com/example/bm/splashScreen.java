@@ -50,7 +50,6 @@ public class splashScreen extends AppCompatActivity {
                 e.printStackTrace();
             }
             Intent intent =new Intent(splashScreen.this, initialScreen.class);
-
             startActivity(intent);
             splashScreen.this.finish();
 
