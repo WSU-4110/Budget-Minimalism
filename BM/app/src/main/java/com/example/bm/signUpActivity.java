@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class signUpActivity extends AppCompatActivity {
 
     private EditText userName, userPassword, userEmail, confirmPassword;
-    private Button regButton;
+    private Button regButton,back;
     private TextView userLogin;
     //Database helper
     private FirebaseAuth firebaseAuth;
@@ -64,10 +64,12 @@ public class signUpActivity extends AppCompatActivity {
         });
 
         //once the user click on Sign in it will take them to Home Page Activity
-        userLogin.setOnClickListener(new View.OnClickListener() {
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(signUpActivity.this, com.example.bm.mainActivity.class));
+                Intent intent = new Intent(signUpActivity.this, initialScreen.class);
+                startActivity(intent);
+                signUpActivity.this.finish();
             }
         });
 
@@ -79,7 +81,7 @@ public class signUpActivity extends AppCompatActivity {
         userPassword = (EditText)findViewById (R.id.etUserPassword);
         userEmail = (EditText)findViewById (R.id.etUserEmail);
         regButton = (Button) findViewById (R.id.etSignup);
-        userLogin = (TextView) findViewById (R.id.tvUserLogin);
+        back = (Button) findViewById (R.id.BackButton2);
         confirmPassword = (EditText) findViewById(R.id.etUserPassword2);
 
     }
