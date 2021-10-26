@@ -119,6 +119,22 @@ public class homePageActivity extends AppCompatActivity {
         }
 
     }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        if (monthlyBudget.getBudgetValue() == 0.00) {
+            // Display 0
+            budgetLabel = (TextView) findViewById(R.id.textView16);
+            budgetLabel.setText("$0.00");
+        }
+        else {
+            // Set the textview to be the budget value
+            budgetLabel = (TextView) findViewById(R.id.textView16);
+            budgetLabel.setText("$" + monthlyBudget.getBudgetValue());
+        }
+    }
+
     // Mitchell wrote this function
     public void openActivity_expense_inputscreen() {
         Intent intent = new Intent(this, expenseInputScreen.class);
