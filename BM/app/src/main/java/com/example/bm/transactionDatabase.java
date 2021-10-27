@@ -14,7 +14,7 @@ import java.util.concurrent.Executors;
 // Mitchell
 // This is the backend, you don't need to mess around in here directly
 
-@Database(entities = {transactionEntity.class}, version = 1, exportSchema = false)
+@Database(entities = {transactionEntity.class}, version = 3, exportSchema = false)
 public abstract class transactionDatabase extends RoomDatabase {
 
     public abstract dataDAO dataDAO();
@@ -31,6 +31,7 @@ public abstract class transactionDatabase extends RoomDatabase {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             transactionDatabase.class, "transaction_database")
                             .addCallback(sRoomDatabaseCallback)
+                            .fallbackToDestructiveMigration()
                             .build();
                 }
             }
@@ -38,6 +39,10 @@ public abstract class transactionDatabase extends RoomDatabase {
         return INSTANCE;
     }
 
+    public dataDAO getDataDao()
+    {
+        return INSTANCE.dataDAO();
+    }
     // Mitchell
     // overrides onOpen to populate the database
     private static RoomDatabase.Callback sRoomDatabaseCallback = new RoomDatabase.Callback() {

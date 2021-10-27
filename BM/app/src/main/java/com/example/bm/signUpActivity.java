@@ -19,11 +19,9 @@ import com.google.firebase.auth.FirebaseAuth;
 
 
 public class signUpActivity extends AppCompatActivity {
-
-    //Mohammed Rahin
-    private EditText userName, userPassword, userEmail;
-    private Button regButton;
-    private TextView userLognin;
+    private EditText userName, userPassword, userEmail, confirmPassword;
+    private Button regButton,back;
+    private TextView userLogin;
     //Database helper
     private FirebaseAuth firebaseAuth;
 
@@ -31,11 +29,9 @@ public class signUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        //Mohammed Rahin
         //this will set up the UI Views
         setupUIViews();
 
-        //Mohammed Rahin
         //Database helper
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -52,7 +48,7 @@ public class signUpActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(signUpActivity.this, "Registration successfull", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(signUpActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(signUpActivity.this, com.example.bm.mainActivity.class));
                             }else{
                                 Toast.makeText(signUpActivity.this, "Registration failed", Toast.LENGTH_SHORT).show();
@@ -65,26 +61,27 @@ public class signUpActivity extends AppCompatActivity {
                 }
             }
         });
-        //Mohammed Rahin
+
         //once the user click on Sign in it will take them to Home Page Activity
-        userLognin.setOnClickListener(new View.OnClickListener() {
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(signUpActivity.this, com.example.bm.mainActivity.class));
+                Intent intent = new Intent(signUpActivity.this, initialScreen.class);
+                startActivity(intent);
+                signUpActivity.this.finish();
             }
         });
 
     }
 
-    //Mohammed Rahin
     //This is a sign up page
     private void setupUIViews(){
         userName = (EditText)findViewById (R.id.etUserName);
         userPassword = (EditText)findViewById (R.id.etUserPassword);
         userEmail = (EditText)findViewById (R.id.etUserEmail);
         regButton = (Button) findViewById (R.id.etSignup);
-        userLognin = (TextView) findViewById (R.id.tvUserLogin);
-
+        back = (Button) findViewById (R.id.BackButton2);
+        confirmPassword = (EditText) findViewById(R.id.etUserPassword2);
     }
     private Boolean validate(){
         Boolean result = false;
@@ -92,11 +89,18 @@ public class signUpActivity extends AppCompatActivity {
         String name = userName.getText().toString();
         String password = userPassword.getText().toString();
         String email = userEmail.getText().toString();
+        String confirmPasswordValue = confirmPassword.getText().toString();
 
-        if (name.isEmpty() || password.isEmpty() || email.isEmpty()) {
-            Toast.makeText(this,"Please enter all the detailes", Toast.LENGTH_SHORT).show();
-        }else{
-            result = true;
+        if (name.isEmpty() || password.isEmpty() || email.isEmpty() || confirmPasswordValue.isEmpty()) {
+            Toast.makeText(this,"Please enter all the required details.", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            if (!password.equals(confirmPasswordValue)) {
+                Toast.makeText(this,"Passwords do not match.", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                result = true;
+            }
         }
 
         return result;

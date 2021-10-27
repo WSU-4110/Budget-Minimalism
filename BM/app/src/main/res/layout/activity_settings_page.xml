@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:background="@drawable/back"
     tools:context=".settingsPage">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

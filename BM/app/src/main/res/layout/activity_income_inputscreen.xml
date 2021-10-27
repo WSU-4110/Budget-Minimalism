@@ -120,7 +120,6 @@
         android:layout_width="192dp"
         android:layout_height="49dp"
         android:layout_marginTop="88dp"
-        android:text="@string/text_label1"
         android:textSize="30sp"
         android:textStyle="bold"
         android:typeface="normal"

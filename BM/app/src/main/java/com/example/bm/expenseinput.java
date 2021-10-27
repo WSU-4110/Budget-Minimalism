@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,6 +14,9 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+
+
+//this class takes input from user for saving expense
 public class expenseinput extends AppCompatActivity {
 
     EditText editTextdescription;
@@ -30,7 +34,6 @@ public class expenseinput extends AppCompatActivity {
         editTextdescription=(EditText)findViewById(R.id.editText);
         editTextprice=(EditText)findViewById(R.id.editText2);
         spinner12=(Spinner)findViewById(R.id.spinner4);
-
         buttonsubmit=(Button)findViewById(R.id.expenseSubmit);
         databaseTransection= FirebaseDatabase.getInstance().getReference("transection");
 
@@ -60,9 +63,10 @@ public class expenseinput extends AppCompatActivity {
         if(!TextUtils.isEmpty(transectionprice)){
             String id=databaseTransection.push().getKey();
 
-            transection transection1=new transection (id,transectiondescription,transectionprice,transectioncategory);
+            transaction transection1=new transaction (id,transectiondescription,transectionprice,transectioncategory);
 
             databaseTransection.setValue(transection1);
+            Log.e("room", "expense is added expense input");
 
 
 

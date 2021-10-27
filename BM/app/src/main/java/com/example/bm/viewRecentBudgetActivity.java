@@ -3,6 +3,7 @@ package com.example.bm;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -45,42 +46,41 @@ public class viewRecentBudgetActivity extends AppCompatActivity {
         // creates a referance to the child or the root of the database which
         // i have saved up as transection because it saves any expense transection
 
-        mDatabase= FirebaseDatabase.getInstance().getReference().child("transection");
-
-        //creates an event listener which finds all the prices and sums them up
-        mDatabase.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                int sum=0;
-                // in a for loop, we go through each one and add the price attribute
-
-                for (DataSnapshot ds:dataSnapshot.getChildren()){
-                    Map<String, Object> map=(Map<String,Object>) ds.getValue();
-                    // looks for price in the database to add
-                    Object price=map.get("price");
-                    // coverting string to int using javas built in method parseint
-
-                    int pValue=Integer.parseInt(String.valueOf(price));
-                    sum+=pValue;
-                    // sums up and sends to the text field in the xml file.
-                    mTotal.setText(String.valueOf(sum));
-
-
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+//        mDatabase= FirebaseDatabase.getInstance().getReference().child("transection");
+//
+//        //creates an event listener which finds all the prices and sums them up
+//        mDatabase.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                int sum=0;
+//                // in a for loop, we go through each one and add the price attribute
+//
+//                for (DataSnapshot ds:dataSnapshot.getChildren()){
+//                    Map<String, Object> map=(Map<String,Object>) ds.getValue();
+//                    // looks for price in the database to add
+//                    Object price=map.get("price");
+//                    // coverting string to int using javas built in method parseint
+//
+//                    int pValue=Integer.parseInt(String.valueOf(price));
+//                    sum+=pValue;
+//                    // sums up and sends to the text field in the xml file.
+//                    mTotal.setText(String.valueOf(sum));
+//
+//
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
 
         // Mitchell
         // This code sets up the recycler view to return database information
-        RecyclerView recyclerView = findViewById(R.id.recview);
-        final transactionsAdapter adapter = new transactionsAdapter(this);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        dataViewModel = new ViewModelProvider(this).get(dataViewModel.class);
+        showRecentActivity(dataViewModel);
+        setTotalExpense(dataViewModel, mTotal);
 
         // Mitchell
         // Enables back button on the view page
@@ -94,15 +94,53 @@ public class viewRecentBudgetActivity extends AppCompatActivity {
 
         // Mitchell
         // Observer for the LiveData, calls the onChanged() method when observed data changes
-        dataViewModel = new ViewModelProvider(this).get(dataViewModel.class);
+
+
+    } // end onCreate
+
+    //this lists all recent activity in a recyclerview model
+    public void showRecentActivity(dataViewModel dataViewModel){
+        RecyclerView recyclerView = findViewById(R.id.recview);
+        final transactionsAdapter adapter = new transactionsAdapter(this);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         dataViewModel.getAllWords().observe(this, new Observer<List<transactionEntity>>() {
             @Override
             public void onChanged(@androidx.annotation.Nullable final List<transactionEntity> words) {
                 adapter.setWords(words);
+                Log.e("room", "list size: " + words.size());
             }
         });
+    }
 
-    } // end onCreate
+    private void setTotalExpense(dataViewModel dataViewModel, TextView t){
+
+
+        dataViewModel.getTotalExpense().observe(this, new Observer<Double>(){
+            @Override
+            public void onChanged(Double aDouble) {
+                if(aDouble!= null) t.setText(aDouble+ "");
+                else t.setText(0.00 + "");
+            }
+
+
+        });
+    }
+
+//    public void setTotalExpense_(TextView t){
+//
+//
+//        dataViewModel.getTotalExpense().observe(this, new Observer<Double>(){
+//            @Override
+//            public void onChanged(Double aDouble) {
+//                if(aDouble!= null) t.setText(aDouble+ "");
+//                else t.setText(0.00 + "");
+//            }
+//
+//
+//        });
+//    }
 
     // Mitchell
     // to return user to the view selection page
