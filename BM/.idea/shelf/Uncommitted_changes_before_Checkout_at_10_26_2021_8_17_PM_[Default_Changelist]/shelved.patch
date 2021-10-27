@@ -1,0 +1,61 @@
+Index: app/src/main/java/com/example/bm/setBudgetActivity2.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.bm;\r\n\r\nimport static com.example.bm.homePageActivity.monthlyBudget;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\npublic class setBudgetActivity2 extends AppCompatActivity {\r\n\r\n    private Button backButton;\r\n    private Button submitBudgetButton;\r\n    private TextView budgetField;\r\n    private String budgetFieldValue;\r\n    private double budgetValue;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_set_budget2);\r\n\r\n        // Button variables\r\n        backButton = (Button)findViewById(R.id.button6);\r\n        submitBudgetButton = (Button)findViewById(R.id.button5);\r\n        budgetField = (TextView) findViewById(R.id.editTextNumberDecimal2);\r\n\r\n\r\n\r\n        // For submitting the budget\r\n        submitBudgetButton.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                budgetFieldValue = budgetField.getText().toString();\r\n                budgetValue = Double.parseDouble(budgetFieldValue);\r\n\r\n                monthlyBudget.setBudgetValue(budgetValue);\r\n                System.out.println(\"Monthly budget: \" + monthlyBudget.getBudgetValue());\r\n                Toast.makeText(setBudgetActivity2.this, \"Your monthly budget has been set!\", Toast.LENGTH_SHORT).show();\r\n\r\n            }\r\n        });\r\n\r\n        backButton.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                returnToMain();\r\n            }\r\n        });\r\n\r\n\r\n    }\r\n\r\n    // Function to return to the main screen\r\n    public void returnToMain() {\r\n        Intent intent = new Intent (this, homePageActivity.class);\r\n        startActivity(intent);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/bm/setBudgetActivity2.java b/app/src/main/java/com/example/bm/setBudgetActivity2.java
+--- a/app/src/main/java/com/example/bm/setBudgetActivity2.java	(revision ac74543508cfffd8d981112be500409077928f00)
++++ b/app/src/main/java/com/example/bm/setBudgetActivity2.java	(date 1635293418802)
+@@ -57,7 +57,9 @@
+ 
+     // Function to return to the main screen
+     public void returnToMain() {
++        //Intent intent = new Intent (this, homePageActivity.class);
+         Intent intent = new Intent (this, homePageActivity.class);
++        intent.putExtra("monthlyBudget", budgetValue);
+         startActivity(intent);
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/example/bm/homePageActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.bm;\r\n\r\nimport static com.example.bm.setBudgetActivity.monthlyBudget;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.util.Log;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport com.example.bm.R;\r\n\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.lifecycle.Observer;\r\nimport androidx.lifecycle.ViewModelProvider;\r\n\r\nimport com.example.bm.dataViewModel;\r\nimport com.example.bm.expenseInputScreen;\r\nimport com.example.bm.incomeInputScreen;\r\nimport com.example.bm.selectWhichViewPage;\r\nimport com.example.bm.settingsPage;\r\nimport com.google.android.material.floatingactionbutton.FloatingActionButton;\r\n\r\nimport java.util.List;\r\n\r\n//this page lists three button: expense, income, view activity\r\npublic class homePageActivity extends AppCompatActivity {\r\n    // Object name declarations\r\n    private Button button2;         //Main menu \"Expense\" button object\r\n    private Button incomeButton;    //Main menu \"Income\" button object\r\n    private Button viewButton;\r\n    private Button setBudgetButton;\r\n    private TextView budgetLabel;\r\n    public static Budget monthlyBudget;\r\n    public static final int NEW_WORD_ACTIVITY_REQUEST_CODE = 1;\r\n    private com.example.bm.dataViewModel dataViewModel;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_home_page);\r\n        //Toolbar toolbar = findViewById(R.id.toolbar);\r\n        //setSupportActionBar(toolbar);\r\n\r\n        dataViewModel = new ViewModelProvider(this).get(dataViewModel.class);\r\n        dataViewModel.getAllWords().observe(this, new Observer<List<transactionEntity>>() {\r\n            @Override\r\n            public void onChanged(@androidx.annotation.Nullable final List<transactionEntity> words) {\r\n                Log.e(\"room\", \"list size: \" + words.size());\r\n            }\r\n        });\r\n\r\n        // Mitchell:\r\n        // This code connects the xml \"Expense\" button and the java object \"button2\"\r\n        // We really need to change the strings.xml file so its not so confusing but...\r\n        // then it creates a click listener, so that when we click on it\r\n        // the button calls the openActivity_expense_inputscreen()\r\n        monthlyBudget = new Budget(0.00);\r\n        button2 = (Button) findViewById(R.id.button2); // Main menu sends to expense page\r\n        button2.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                openActivity_expense_inputscreen();\r\n            }\r\n        });\r\n\r\n        // Mitchell:\r\n        // This code connects the xml \"Income\" button and the java object \"incomeButton\"\r\n        // then it creates a click listener, so that when we click on it\r\n        // the button calls the openActivity_expense_inputscreen()\r\n        incomeButton = (Button) findViewById(R.id.expenseSubmit);\r\n        incomeButton.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                openActivity_income_inputscreen();\r\n            }\r\n        });\r\n\r\n        // This function sends you to the settings page\r\n        FloatingActionButton fab = findViewById(R.id.fab);\r\n        fab.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                //Snackbar.make(view, \"WRITE CODE TO SEND U TO SETTINGS\", Snackbar.LENGTH_LONG)\r\n                //       .setAction(\"Action\", null).show();\r\n                sendYoutoSettingsPage();\r\n            }\r\n        });\r\n\r\n        viewButton = (Button) findViewById(R.id.button3);\r\n        viewButton.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                sendYouToViewRecent();\r\n            }\r\n        });\r\n\r\n        // This sends the user to the set budget screen\r\n        setBudgetButton = (Button) findViewById(R.id.button4);\r\n        setBudgetButton.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                sendToSetBudgetScreen();\r\n            }\r\n        });\r\n\r\n        if (monthlyBudget.getBudgetValue() == 0.00) {\r\n            // Display 0\r\n            budgetLabel = (TextView) findViewById(R.id.textView16);\r\n            budgetLabel.setText(\"$0.00\");\r\n        }\r\n        else {\r\n            // Set the textview to be the budget value\r\n            budgetLabel = (TextView) findViewById(R.id.textView16);\r\n            budgetLabel.setText(\"$\" + monthlyBudget.getBudgetValue());\r\n        }\r\n\r\n    }\r\n    // Mitchell wrote this function\r\n    public void openActivity_expense_inputscreen() {\r\n        Intent intent = new Intent(this, expenseInputScreen.class);\r\n        startActivity(intent);\r\n    }\r\n\r\n    // Mitchell\r\n    public void openActivity_income_inputscreen() {\r\n        Intent intent = new Intent(this, incomeInputScreen.class);\r\n        startActivity(intent);\r\n    }\r\n\r\n    // Mitchell\r\n    public void sendYoutoSettingsPage() {\r\n        Intent intent = new Intent (this, settingsPage.class);\r\n        startActivity(intent);\r\n    }\r\n\r\n    // This function sends you to the view_recent_budget_activity\r\n    public void sendYouToViewRecent() {\r\n        Intent intent = new Intent (this, selectWhichViewPage.class);\r\n        startActivity(intent);\r\n    }\r\n\r\n    public void sendToSetBudgetScreen() {\r\n        Intent intent = new Intent (this, setBudgetActivity2.class);\r\n        startActivity(intent);\r\n    }\r\n/**\r\n // Android Studio default code\r\n @Override\r\n public boolean onCreateOptionsMenu(Menu menu) {\r\n // Inflate the menu; this adds items to the action bar if it is present.\r\n getMenuInflater().inflate(R.menu.menu_main, menu);\r\n return true;\r\n }\r\n\r\n // Android Studio default code\r\n @Override\r\n public boolean onOptionsItemSelected(MenuItem item) {\r\n // Handle action bar item clicks here. The action bar will\r\n // automatically handle clicks on the Home/Up button, so long\r\n // as you specify a parent activity in AndroidManifest.xml.\r\n int id = item.getItemId();\r\n\r\n //noinspection SimplifiableIfStatement\r\n if (id == R.id.action_settings) {\r\n return true;\r\n }\r\n\r\n return super.onOptionsItemSelected(item);\r\n }\r\n **/\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/bm/homePageActivity.java b/app/src/main/java/com/example/bm/homePageActivity.java
+--- a/app/src/main/java/com/example/bm/homePageActivity.java	(revision ac74543508cfffd8d981112be500409077928f00)
++++ b/app/src/main/java/com/example/bm/homePageActivity.java	(date 1635293764213)
+@@ -107,7 +107,7 @@
+             }
+         });
+ 
+-        if (monthlyBudget.getBudgetValue() == 0.00) {
++       /* if (monthlyBudget.getBudgetValue() == 0.00) {
+             // Display 0
+             budgetLabel = (TextView) findViewById(R.id.textView16);
+             budgetLabel.setText("$0.00");
+@@ -116,7 +116,7 @@
+             // Set the textview to be the budget value
+             budgetLabel = (TextView) findViewById(R.id.textView16);
+             budgetLabel.setText("$" + monthlyBudget.getBudgetValue());
+-        }
++        }*/
+ 
+     }
+     // Mitchell wrote this function
+@@ -147,6 +147,11 @@
+         Intent intent = new Intent (this, setBudgetActivity2.class);
+         startActivity(intent);
+     }
++
++    public void updateMonthlyBudget(){
++        Intent intent = getIntent();
++        Double getBudget = intent.getDoubleExtra("monthlyBudget");
++    }
+ /**
+  // Android Studio default code
+  @Override

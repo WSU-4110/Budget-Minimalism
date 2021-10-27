@@ -3,7 +3,9 @@ package com.example.bm;
 import static com.example.bm.setBudgetActivity.monthlyBudget;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -35,6 +37,7 @@ public class homePageActivity extends AppCompatActivity {
     private Button setBudgetButton;
     private TextView budgetLabel;
     public static Budget monthlyBudget;
+    public SharedPreferences preferences;
     public static final int NEW_WORD_ACTIVITY_REQUEST_CODE = 1;
     private com.example.bm.dataViewModel dataViewModel;
 
@@ -44,6 +47,8 @@ public class homePageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
         //Toolbar toolbar = findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
+
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         dataViewModel = new ViewModelProvider(this).get(dataViewModel.class);
         dataViewModel.getAllWords().observe(this, new Observer<List<transactionEntity>>() {
@@ -107,7 +112,7 @@ public class homePageActivity extends AppCompatActivity {
             }
         });
 
-        if (monthlyBudget.getBudgetValue() == 0.00) {
+       if (monthlyBudget.getBudgetValue() == 0.00) {
             // Display 0
             budgetLabel = (TextView) findViewById(R.id.textView16);
             budgetLabel.setText("$0.00");
@@ -123,7 +128,9 @@ public class homePageActivity extends AppCompatActivity {
     @Override
     protected void onResume(){
         super.onResume();
-        if (monthlyBudget.getBudgetValue() == 0.00) {
+
+        String userBudget = preferences.getString("UserBudget", "");
+        if (userBudget.length() < 1) {
             // Display 0
             budgetLabel = (TextView) findViewById(R.id.textView16);
             budgetLabel.setText("$0.00");
@@ -131,7 +138,7 @@ public class homePageActivity extends AppCompatActivity {
         else {
             // Set the textview to be the budget value
             budgetLabel = (TextView) findViewById(R.id.textView16);
-            budgetLabel.setText("$" + monthlyBudget.getBudgetValue());
+            budgetLabel.setText("$" +userBudget);
         }
     }
 
@@ -163,6 +170,11 @@ public class homePageActivity extends AppCompatActivity {
         Intent intent = new Intent (this, setBudgetActivity2.class);
         startActivity(intent);
     }
+
+   /* public void updateMonthlyBudget(){
+        Intent intent = getIntent();
+        Double getBudget = intent.getDoubleExtra("monthlyBudget");
+    }*/
 /**
  // Android Studio default code
  @Override
